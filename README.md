@@ -1,2 +1,2 @@
-# CarlGang working for changing the face of the music recognition's world.
+# CarlGang working for changing the face of the music recognition's word.
 

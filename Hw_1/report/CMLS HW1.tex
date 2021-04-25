@@ -14,6 +14,8 @@ Our group worked on \textbf{Assignment 3}: implement a classifier system able to
 Due to the fact that both these effects imply a significant change in the power spectrum, It is efficient to use  as decision feature the Root Mean Square, that leads to good predictions.
 \section{Dataset selection}
 \section{Multi-class Weighted Support Vector Machine}
+SVMs are generally binary classifier, so, in order to manage 3 classes, we used one SVC for each couple of class: Distortion/Tremolo, Distortion/NoFX and Tremolo/NoFX. Each one misclassify the missing class, hence, applying majority voting, we are able to train and test the SVM with all the instances of the samples.
+
 In our training set we face the problem of having an unbalance amount of tracks for every class type. It contains half of no-effect tracks compared to the effected ones, hence we have found a way to solve this problem. The SVM model works well also with unbalanced training-set taking care of setting efficiently the right value of an internal parameter called C.\\ C  determines the number of tolerated severity apply to the margin violation (and to the hyperplane), it controls the trade-off between maximizing the separation margin between classes minimizing the number of misclassified instances.
 Specifically, each example in the training dataset has its own penalty term C used in the calculation of the margin when fitting the SVM model. The value of an example’s C-value can be calculated as a weighting of the global C-value, where the weight is defined proportional to the class distribution. 
 

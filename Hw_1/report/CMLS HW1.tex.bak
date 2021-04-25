@@ -14,11 +14,12 @@ Our group worked on \textbf{Assignment 3}: implement a classifier system able to
 Due to the fact that both these effects imply a significant change in the power spectrum, It is efficient to use  as decision feature the Root Mean Square, that leads to good predictions.
 \section{Dataset selection}
 \section{Multi-class Weighted Support Vector Machine}
-In our training set we face the problem of having an unbalance amount of tracks for every class type. It contains half of no-effect tracks compared to the effected ones, hence we have found a way to solve this problem. The SVM model works well also with unbalanced training-set taking care of setting efficiently the right value of an internal parameter called C.\\ C  determines the number of tolerated severity apply to the margin violation (and to the hyperplane), it controls the trade-off between maximizing the separation margin between classes minimizing the number of misclassified instances.
-Specifically, each example in the training dataset has its own penalty term C used in the calculation of the margin when fitting the SVM model. The value of an example’s C-value can be calculated as a weighting of the global C-value, where the weight is defined proportional to the class distribution. 
-
+In Our trainig set we face the problem of having an unbalance amount of tracks for every class type. It contains half of no-effect tracks compared to the effected ones, hence we have found a way to solve this problem.
+The SVM model works well also with unbalanced training-set taking care of setting the right value of an internal parameter called C. C  determines the number of tolerated severity apply to the margin violation (and to the hyperplane).
+Specifically, each example in the training dataset has its own penalty term C used in the calculation of the margin when fitting the SVM model. The value of an example’s C-value can be calculated as a weighting of the global C-value, where the weight is defined proportional to the class distribution.
 $$C_i = weight_i * C$$
-By default it is suppose a balanced training-set, each class has the same weighting, which means that the softness of the margin is symmetrical.\\ A larger weighting factor C can be used for the minority class, allowing the margin to be softer (smaller penalty for misclassified examples), whereas a smaller C can be used for the majority class, forcing the margin to be harder and preventing misclassified examples.
+By default it is suppose a balanced training-set, each class has the same weighting, which means that the softness of the margin is symmetrical. C controls the trade-off between maximizing the separation margin between classes and minimizing the number of misclassified instances. 
+A larger weighting factor C can be used for the minority class, allowing the margin to be softer (smaller penalty for misclassified examples), whereas a smaller C can be used for the majority class, forcing the margin to be harder and preventing misclassified examples.
 This has the effect of encouraging the margin to contain the majority class with less flexibility, but allow the minority class to be flexible with misclassification of majority class examples onto the minority class side if needed.
 
 \section{Cross-validation for SVM parameters}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.10)  25 APR 2021 19:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.10)  25 APR 2021 20:38
 entering extended mode
 **"./CMLS HW1.tex"
 (CMLS HW1.tex
@@ -28,8 +28,7 @@ Package: inputenc 2020/08/01 v1.3d Input encoding file
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count187
 \l__pdf_internal_box=\box47
-)
-No file "CMLS HW1".aux.
+) (CMLS HW1.aux)
 \openout1 = `"CMLS HW1.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -52,24 +51,24 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 10.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 10.
-[1
+ [1
 
-{C:/Users/il_gi/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2] [3]
-(CMLS HW1.aux) ) 
+{C:/Users/il_gi/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2] [3] (CMLS H
+W1.aux) ) 
 Here is how much of TeX's memory you used:
- 431 strings out of 479321
- 7423 string characters out of 2873173
- 297689 words of memory out of 3000000
+ 433 strings out of 479321
+ 7502 string characters out of 2873173
+ 298689 words of memory out of 3000000
  17963 multiletter control sequences out of 15000+600000
  407546 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,4n,50p,631b,262s stack positions out of 5000i,500n,10000p,200000b,80000s
-<C:/Miktex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Miktex
-/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Miktex/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Miktex/
-fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Miktex/fonts/type1/public/amsfonts
-/cm/cmtt10.pfb>
-Output written on "CMLS HW1.pdf" (3 pages, 81650 bytes).
+<C:/Miktex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Miktex/fonts/
+type1/public/amsfonts/cm/cmbx12.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm/c
+mr10.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Miktex/fonts/t
+ype1/public/amsfonts/cm/cmr17.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm/cmt
+t10.pfb>
+Output written on "CMLS HW1.pdf" (3 pages, 84848 bytes).
 PDF statistics:
  36 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

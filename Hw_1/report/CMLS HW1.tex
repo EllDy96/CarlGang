@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \title{CMLS HW1}
 \author{}
@@ -87,5 +88,42 @@ Grid scores on development set:
 0.993 (+/-0.016) for {'C': 1000, 'kernel': 'rbf'}
 [...]
 \end{verbatim}
+\newpage
 \section{Results}
+In order to control the effectiveness of the feature, we first compared the plots of the rms of the three different classes. In these figures we saw that the \emph{distortion} effect has a long sustain phase, meanwhile \emph{NoFX} and \emph{tremolo} rapidly decay. These last two classes rms has the same envelope but \emph{tremolo} has an oscillating behaviour due to its characteristic amplitude oscillation.\\
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.2]{distortion.png}
+\caption{Distortion}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.2]{nofx.png}
+\caption{No Effects}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=.2]{tremolo.png}
+\caption{Tremolo}
+\end{figure} 
+
+We also compared the train and test set of the audio samples belonging to the same class and we saw that the rms are very similar to each other.\\
+Then, at the end of the feature computation and voting we calculated and visualised the confusion matrix:
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+	\hline
+	  & distortion & tremolo & NoFx \\
+	\hline
+	distortion & 1219 & 19 & 0 \\
+	\hline
+	tremolo & 4 & 1224 & 0 \\
+	\hline
+	NoFX & 7 & 1 & 547  \\
+	\hline
+\end{tabular}
+\end{center}
+
+As the table above shows, the rms it is enough for a good separation and then identification of the three different effects, meanwhile using the other features we took in consideration. In particular with the others classifications \emph{tremolo} and \emph{NoFx} were quite confused each other.
+
 \end{document}

@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+
+\title{CMLS HW1}
+\author{}
+\date{April 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Feature choice}
+For classifying those three classes, we decided to use one low-level descriptor: the \textbf{Root Mean Square} (\textbf{RMS}), for both tremolo detection and distorsion detection. 
+After trying other features like the spectral centroid, we opted for the RMS. The RMS is defined as the square root of the mean energy of the signal, through the following formula:
+\[ RMS =\sqrt{\frac{1}{N}\sum_{n}^{}|x(n)|^2}  \] where $|x(n)|$ is the amplitude of the signal evaluated at the time frame $n$ and $N$ represents the number of frames in which the signal is considered.
+\\In other terms, the RMS represents the average "power" of the signal.
+\\We decided to use this spectral feature because the difference between the three classes can be well explained in terms of the mean energy of the waveform in the frequency spectrum.
+\\Indeed, by simply using a spectrum analyzer, we can see that, for example, for the tremolo audio samples, the waveform is rapidly oscillating in amplitude. In the distortion audio samples, instead, the waveform is distributed along more frequencies in the spectrum. On that note, we'll expect a lower energy in the tremolo case, an higher energy in the distortion one, and an intermediate energy in the case of samples with no effects.
+\\For implementing this feature we used a built-in function. The Root Mean Square is one of the functions for spectral feature extraction already implemented in Librosa. The function is \emph{librosa.feature.rms}.
+\\This function takes in input: the audio samples array obtained with the function \emph{librosa.load}, the length of analysis frame (in samples) for energy calculation and the hop length for STFT. 
+The output of the function is an array containing all the RMS values, one for each frame.
+
+
+\end{document}

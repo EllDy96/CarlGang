@@ -24,7 +24,7 @@
      
     \vspace{0.5cm}
     
-    \textbf{Luca Cattaneo}
+    \textbf{10612929}
      
     
     \vspace{0.5cm}
@@ -185,7 +185,7 @@ Then, at the end of the feature computation and voting we calculated and visuali
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
 	\hline
-	  & distortion & tremolo & NoFx \\
+	\textbf{rms}  & distortion & tremolo & NoFx \\
 	\hline
 	distortion & 1219 & 19 & 0 \\
 	\hline
@@ -196,6 +196,20 @@ Then, at the end of the feature computation and voting we calculated and visuali
 \end{tabular}
 \end{center}
 
-As the table above shows, the rms it is enough for a good separation and then identification of the three different effects, meanwhile using the other features we took in consideration. In particular with the others classifications \emph{tremolo} and \emph{NoFx} were quite confused each other.
+As the table above shows, the rms it is enough for a good separation and then identification of the three different effects, meanwhile using the other features we took in consideration we weren't able to discern all the three classes properly. In particular with the spectral centroid classification the \emph{distortion} were well separated from the other but \emph{NoFx} were confused with \emph{tremolo} more than the half of tests:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+	\hline
+	\textbf{sp. centroid}  & distortion & tremolo & NoFx \\
+	\hline
+	distortion & 1238 & 0 & 0 \\
+	\hline
+	tremolo & 6 & 1167 & 55 \\
+	\hline
+	NoFX & 0 & 352 & 203  \\
+	\hline
+\end{tabular}
+\end{center}
 
 \end{document}

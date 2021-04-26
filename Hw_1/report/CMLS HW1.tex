@@ -13,7 +13,8 @@
     
     \vspace{0.5cm}
     \LARGE
-    Homework n° 1, audio effect classification
+    Homework n° 1\\
+   	Audio effects classification
 
     \vspace{1 cm}
     
@@ -35,8 +36,7 @@
     \vspace{0.5cm}
     
     \vfill
-    % Report for the second homework of the Digital Audio Analysis and Processing module of the SASP course.
-    
+  
    
     \date{April 2021}
     \vspace{0.3cm}
@@ -52,11 +52,10 @@
 
 \abstract{}
 Our group worked on \textbf{Assignment 3}: implement a 			  	classifier system able to predict the audio effect used in 			 	recordings of electric guitar and bass. We divided our work in 		 	steps as presented in the sections of this document, from the  	      	choice of the feature through the selection of a classification 		method, for each phase we present the decisions we made. In 			general, we used as a reference the second laboratory on 				Classification, mainly because we implemented the Support Vector 	Machine with majority voting for multiclass classification.
-
-Here is the link to the GitHub Repository containing the Jupyter Notebook: \url{https://github.com/EllDy96/CarlGang/tree/master/Hw_1}
+Here is the link to the GitHub Repository containing the Jupyter Notebook: \url{https://github.com/EllDy96/CarlGang/tree/Homework1}
 \endabstract{}
 
-\chapter{Reasoning and implementation}
+\chapter{}
 \section{Feature choice}
 The first attempt in trying to classify those three classes was by using one low-level descriptor: the \textbf{Spectral Centroid} (\textbf{SC}).
 \\This synthetic descriptor represents where the center of mass of the spectrum is located. It is calculated through the following formula:
@@ -89,8 +88,8 @@ NoFX       & 559                                                       & 555    
 \end{table}
 
 \section{Multi-class Weighted Support Vector Machine}
-SVMs are generally binary classifier, so, in order to manage 3 classes, we used one SVC for each couple of class: Distortion/Tremolo, Distortion/NoFX and Tremolo/NoFX. Each one misclassify the missing class, hence, applying majority voting, we are able to train and test the SVM with all the instances of the samples.
-
+SVMs are generally binary classifier, so, in order to manage 3 classes, we used one SVC for each couple of class: Distortion/Tremolo, Distortion/NoFX and Tremolo/NoFX. Each one misclassify the missing class, hence, applying majority voting, we are able to train and test the SVM with all the instances of the samples.\\
+\\
 In our training set we face the problem of having an unbalance amount of tracks for every class type. It contains half of no-effect tracks compared to the effected ones, hence we have found a way to solve this problem. The SVM model works well also with unbalanced training-set taking care of setting efficiently the right value of an internal private variable called C.\\ C  determines the number of tolerated severity apply to the margin violation (and to the hyperplane), it controls the trade-off between maximizing the separation margin between classes minimizing the number of misclassified instances.
 Specifically, each example in the training dataset has its own penalty term C used in the calculation of the margin when fitting the SVM model. The value of an example’s C-value can be calculated as a weighting of the global C-value, where the weight is defined proportional to the class distribution. 
 

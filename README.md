@@ -10,4 +10,4 @@ We focused on the classification of 3 classes:
 - tremolo
 - no effect
 
-We use only a portion of the dataset composed of all the monophonic guitar and bass tracks. For a further explanation please see the  PDF  "CMLS HW1.pdf" inside the report folder.
+We use only a portion of the dataset composed of all the monophonic guitar and bass tracks. For a further explanation please see the  PDF report [CMLS HW1](https://github.com/EllDy96/CarlGang/blob/master/Hw_1/report/CMLS%20HW1.pdf).

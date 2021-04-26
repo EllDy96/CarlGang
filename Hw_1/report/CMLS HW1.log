@@ -1,162 +1,172 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.26)  26 APR 2021 11:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.25)  26 APR 2021 13:18
 entering extended mode
 **"./CMLS HW1.tex"
 (CMLS HW1.tex
 LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18> xparse <2020-03-03>
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
-File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+L3 programming layer <2021-02-18>
+(C:\Program Files\MiKTeX\tex/latex/base\report.cls
+Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
+(C:\Program Files\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
 \c@part=\count179
-\c@section=\count180
-\c@subsection=\count181
-\c@subsubsection=\count182
-\c@paragraph=\count183
-\c@subparagraph=\count184
-\c@figure=\count185
-\c@table=\count186
+\c@chapter=\count180
+\c@section=\count181
+\c@subsection=\count182
+\c@subsubsection=\count183
+\c@paragraph=\count184
+\c@subparagraph=\count185
+\c@figure=\count186
+\c@table=\count187
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+(C:\Program Files\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2020/08/01 v1.3d Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cf
-g
+(C:\Program Files\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+(C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen139
 \Gin@req@width=\dimen140
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdft
-ex.def
-File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count187
+(C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count188
 \l__pdf_internal_box=\box47
-) (CMLS HW1.aux)
+)
+(CMLS HW1.aux)
 \openout1 = `"CMLS HW1.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mki
-i
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+ (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count188
+\scratchcounter=\count189
 \scratchdimen=\dimen141
 \scratchbox=\box48
-\nofMPsegments=\count189
-\nofMParguments=\count190
+\nofMPsegments=\count190
+\nofMParguments=\count191
 \everyMPshowfont=\toks18
-\MPscratchCnt=\count191
+\MPscratchCnt=\count192
 \MPscratchDim=\dimen142
-\MPnumerator=\count192
-\makeMPintoPDFobject=\count193
+\MPnumerator=\count193
+\makeMPintoPDFobject=\count194
 \everyMPtoPDFconversion=\toks19
-)
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-ba
-se.sty
+) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-)
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 11.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 11.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 11.
 
-Overfull \hbox (1.57965pt too wide) in paragraph at lines 17--17
-[]\OT1/cmr/bx/n/14.4 Multi-class Weighted Sup-port Vec-tor Ma-chine 
+(C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+<logo_positivo.png, id=1, 227.6505pt x 167.4255pt>
+File: logo_positivo.png Graphic file (type png)
+<use logo_positivo.png>
+Package pdftex.def Info: logo_positivo.png  used on input line 45.
+(pdftex.def)             Requested size: 195.0pt x 143.41852pt.
+ [1
+
+{C:/Users/david/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./logo_positivo
+.png>]
+[1]
+Chapter 1.
+
+Overfull \hbox (3.52583pt too wide) in paragraph at lines 59--59
+[]\OT1/cmr/bx/n/17.28 Multi-class Weighted Sup-port Vec-tor Ma-
  []
 
 [1
 
-{C:/Users/Luca/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 23.
+(Font)              <12> on input line 65.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 23.
- [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+(Font)              <8> on input line 65.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 65.
+ [2] [3] [4]
+Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
-<distortion.png, id=20, 922.19531pt x 281.55188pt>
+<distortion.png, id=31, 922.19531pt x 281.55188pt>
 File: distortion.png Graphic file (type png)
 <use distortion.png>
-Package pdftex.def Info: distortion.png  used on input line 97.
+Package pdftex.def Info: distortion.png  used on input line 140.
 (pdftex.def)             Requested size: 184.43579pt x 56.30937pt.
-<nofx.png, id=22, 907.13907pt x 292.09125pt>
+<nofx.png, id=32, 907.13907pt x 292.09125pt>
 File: nofx.png Graphic file (type png)
 <use nofx.png>
-Package pdftex.def Info: nofx.png  used on input line 102.
+Package pdftex.def Info: nofx.png  used on input line 145.
 (pdftex.def)             Requested size: 181.42459pt x 58.4172pt.
-<tremolo.png, id=23, 911.65594pt x 292.09125pt>
+<tremolo.png, id=33, 911.65594pt x 292.09125pt>
 File: tremolo.png Graphic file (type png)
 <use tremolo.png>
-Package pdftex.def Info: tremolo.png  used on input line 107.
+Package pdftex.def Info: tremolo.png  used on input line 150.
 (pdftex.def)             Requested size: 182.32796pt x 58.4172pt.
-[4 <./distortion.png> <./nofx.png> <./tremolo.png>] (CMLS HW1.aux) ) 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5
+
+ <./distortion.png> <./nofx.png>] [6 <./tremolo.png>] (CMLS HW1.aux) ) 
 Here is how much of TeX's memory you used:
- 1231 strings out of 479334
- 18980 string characters out of 2857559
- 309864 words of memory out of 3000000
- 18716 multiletter control sequences out of 15000+200000
- 407892 words of font info for 42 fonts, out of 3000000 for 9000
+ 1262 strings out of 479321
+ 18897 string characters out of 2866501
+ 310570 words of memory out of 3000000
+ 18752 multiletter control sequences out of 15000+600000
+ 409148 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,6n,74p,631b,258s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/L
-uca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:
-/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12
-.pfb><C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmmi10.pfb><C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmmi7.pfb><C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmr10.pfb><C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmr12.pfb><C:/Users/Luca/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Luca/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Luca/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Luca/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on "CMLS HW1.pdf" (4 pages, 260442 bytes).
+ 68i,6n,74p,631b,258s stack positions out of 5000i,500n,10000p,200000b,80000s
+ <C:\User
+s\david\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm2074.pk><C:
+/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fil
+es/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program
+ Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on "CMLS HW1.pdf" (8 pages, 297215 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
+ 75 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

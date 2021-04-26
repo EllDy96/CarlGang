@@ -7,12 +7,16 @@
 \date{April 2021}
 
 \begin{document}
-
 \maketitle
 
 \section{Feature choice}
-For classifying those three classes, we decided to use one low-level descriptor: the \textbf{Root Mean Square} (\textbf{RMS}), for both tremolo detection and distorsion detection. 
-After trying other features like the spectral centroid, we opted for the RMS. The RMS is defined as the square root of the mean energy of the signal, through the following formula:
+The first attempt in trying to classify those three classes was by using one low-level descriptor: the \textbf{Spectral Centroid} (\textbf{SC}).
+\\This synthetic descriptor represents where the center of mass of the spectrum is located. It is calculated through the following formula:
+\[ SC =\frac{\sum_{n=0}^{N-1}f(n)s(n)}{\sum_{n=0}^{N-1}s(n)}  \] where $f(n)$ is the frequency in Hz corresponding to bin $n$, $s(n)$ represents the spectral value at bin $n$ and $N$ is the total number of frequency bins.
+\\We opted, at first glance, to use this feature because since the spectrum in a distorted audio sample is distributed along an higher range of frequencies, the spectral centroid is therefore higher than a noFX sample. But this descriptor, despite working well in recognizing the difference between distortion vs tremolo and distorsion vs noFX, it doesn't work that well when we have to distinguish between tremolo vs noFX.
+\\However, in trying this feature, we used a built-in function, already implemented in librosa, called \emph{librosa.feature.spectral\_centroid}. This function takes in input: the audio samples array obtained with the function \emph{librosa.load}, the audio sampling rate, the FFT window size, the hop length for STFT, the window length and the type of window used for analyzing the audio. The output of the function is an array containing the centroid frequencies.
+\\Then, we looked for another low-level descriptor, and the final choice fell to the \textbf{Root Mean Square} (\textbf{RMS}), for both tremolo detection and distorsion detection. 
+The RMS is defined as the square root of the mean energy of the signal, through the following formula:
 \[ RMS =\sqrt{\frac{1}{N}\sum_{n}^{}|x(n)|^2}  \] where $|x(n)|$ is the amplitude of the signal evaluated at the time frame $n$ and $N$ represents the number of frames in which the signal is considered.
 \\In other terms, the RMS represents the average "power" of the signal.
 \\We decided to use this spectral feature because the difference between the three classes can be well explained in terms of the mean energy of the waveform in the frequency spectrum.

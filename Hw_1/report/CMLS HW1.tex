@@ -56,6 +56,21 @@ Our group worked on \textbf{Assignment 3}: implement a 			  	classifier system a
 \section{Feature choice}
 Due to the fact that both these effects imply a significant change in the power spectrum, It is efficient to use  as decision feature the Root Mean Square, that leads to good predictions.
 \section{Dataset selection}
+For the definition of the datasets, we decided to use only \textit{monophonic bass} and \textit{monophonic guitar} from \textbf{IDMT-SMT-AUDIO-EFFECTS} in order to have more homogeneous sample's features. While for the train and test sets we divided the whole classes in about half, as shown in the following table:
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+           & \begin{tabular}[c]{@{}c@{}}Train\\ (\# elem)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Test\\ (\# elem)\end{tabular} \\ \hline
+Distortion & 1394                                                      & 1238                                                     \\ \hline
+Tremolo    & 1194                                                      & 1228                                                     \\ \hline
+NoFX       & 559                                                       & 555                                                      \\ \hline
+\end{tabular}
+\caption{Train and test datasets sizes}
+\label{tab:my-table}
+\end{table}
+
 \section{Multi-class Weighted Support Vector Machine}
 SVMs are generally binary classifier, so, in order to manage 3 classes, we used one SVC for each couple of class: Distortion/Tremolo, Distortion/NoFX and Tremolo/NoFX. Each one misclassify the missing class, hence, applying majority voting, we are able to train and test the SVM with all the instances of the samples.
 

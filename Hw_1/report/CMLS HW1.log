@@ -1,13 +1,24 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.25)  26 APR 2021 13:18
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.10)  26 APR 2021 11:46
+>>>>>>> b45ae91ffa82c76e3a1e5c26f19ae7d8fc7393d2
 entering extended mode
 **"./CMLS HW1.tex"
 (CMLS HW1.tex
 LaTeX2e <2020-10-01> patch level 4
+<<<<<<< HEAD
 L3 programming layer <2021-02-18>
 (C:\Program Files\MiKTeX\tex/latex/base\report.cls
 Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
 (C:\Program Files\MiKTeX\tex/latex/base\size12.clo
 File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+=======
+L3 programming layer <2021-02-18> (C:\Miktex\tex/latex/base\article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(C:\Miktex\tex/latex/base\size10.clo
+File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+>>>>>>> b45ae91ffa82c76e3a1e5c26f19ae7d8fc7393d2
 )
 \c@part=\count179
 \c@chapter=\count180
@@ -21,12 +32,17 @@ File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
+<<<<<<< HEAD
 )
 (C:\Program Files\MiKTeX\tex/latex/base\inputenc.sty
+=======
+) (C:\Miktex\tex/latex/base\inputenc.sty
+>>>>>>> b45ae91ffa82c76e3a1e5c26f19ae7d8fc7393d2
 Package: inputenc 2020/08/01 v1.3d Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 )
+<<<<<<< HEAD
 (C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -41,24 +57,51 @@ Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
 (C:\Program Files\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+=======
+(C:\Miktex\tex/latex/graphics\graphicx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Miktex\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(C:\Miktex\tex/latex/graphics\graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Miktex\tex/latex/graphics\trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(C:\Miktex\tex/latex/graphics-cfg\graphics.cfg
+>>>>>>> b45ae91ffa82c76e3a1e5c26f19ae7d8fc7393d2
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 
+<<<<<<< HEAD
 (C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def
+=======
+(C:\Miktex\tex/latex/graphics-def\pdftex.def
+>>>>>>> b45ae91ffa82c76e3a1e5c26f19ae7d8fc7393d2
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen139
 \Gin@req@width=\dimen140
 )
+<<<<<<< HEAD
 (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count188
+=======
+(C:\Miktex\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count187
+>>>>>>> b45ae91ffa82c76e3a1e5c26f19ae7d8fc7393d2
 \l__pdf_internal_box=\box47
 )
 (CMLS HW1.aux)
 \openout1 = `"CMLS HW1.aux"'.
 
+<<<<<<< HEAD
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
@@ -74,6 +117,24 @@ LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
  (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+=======
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+
+(C:\Miktex\tex/context/base/mkii\supp-pdf.mkii
+>>>>>>> b45ae91ffa82c76e3a1e5c26f19ae7d8fc7393d2
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count189
 \scratchdimen=\dimen141
@@ -86,6 +147,7 @@ LaTeX Font Info:    ... okay on input line 4.
 \MPnumerator=\count193
 \makeMPintoPDFobject=\count194
 \everyMPtoPDFconversion=\toks19
+<<<<<<< HEAD
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -108,10 +170,34 @@ Chapter 1.
 
 Overfull \hbox (3.52583pt too wide) in paragraph at lines 59--59
 []\OT1/cmr/bx/n/17.28 Multi-class Weighted Sup-port Vec-tor Ma-
+=======
+) (C:\Miktex\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Miktex\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 21.
+
+Overfull \hbox (1.57965pt too wide) in paragraph at lines 32--32
+[]\OT1/cmr/bx/n/14.4 Multi-class Weighted Sup-port Vec-tor Ma-chine 
+>>>>>>> b45ae91ffa82c76e3a1e5c26f19ae7d8fc7393d2
  []
 
 [1
 
+<<<<<<< HEAD
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 65.
@@ -167,6 +253,49 @@ cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 Output written on "CMLS HW1.pdf" (8 pages, 297215 bytes).
 PDF statistics:
  75 PDF objects out of 1000 (max. 8388607)
+=======
+{C:/Users/il_gi/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2] [3]
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+
+ []
+
+<distortion.png, id=24, 922.19531pt x 281.55188pt>
+File: distortion.png Graphic file (type png)
+<use distortion.png>
+Package pdftex.def Info: distortion.png  used on input line 112.
+(pdftex.def)             Requested size: 184.43579pt x 56.30937pt.
+<nofx.png, id=26, 907.13907pt x 292.09125pt>
+File: nofx.png Graphic file (type png)
+<use nofx.png>
+Package pdftex.def Info: nofx.png  used on input line 117.
+(pdftex.def)             Requested size: 181.42459pt x 58.4172pt.
+<tremolo.png, id=27, 911.65594pt x 292.09125pt>
+File: tremolo.png Graphic file (type png)
+<use tremolo.png>
+Package pdftex.def Info: tremolo.png  used on input line 122.
+(pdftex.def)             Requested size: 182.32796pt x 58.4172pt.
+[5 <./distortion.png> <./nofx.png> <./tremolo.png>] (CMLS HW1.aux) ) 
+Here is how much of TeX's memory you used:
+ 1236 strings out of 479321
+ 18089 string characters out of 2873173
+ 310089 words of memory out of 3000000
+ 18727 multiletter control sequences out of 15000+600000
+ 407892 words of font info for 42 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 68i,13n,74p,631b,258s stack positions out of 5000i,500n,10000p,200000b,80000s
+<C:/Miktex/
+fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Miktex/fonts/type1/public/amsfont
+s/cm/cmbx12.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Miktex
+/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Miktex/fonts/type1/public/amsfont
+s/cm/cmr10.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Miktex/f
+onts/type1/public/amsfonts/cm/cmr17.pfb><C:/Miktex/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Miktex/f
+onts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on "CMLS HW1.pdf" (5 pages, 265363 bytes).
+PDF statistics:
+ 65 PDF objects out of 1000 (max. 8388607)
+>>>>>>> b45ae91ffa82c76e3a1e5c26f19ae7d8fc7393d2
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

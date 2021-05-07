@@ -34,7 +34,7 @@ DelayLineAudioProcessorEditor::DelayLineAudioProcessorEditor (DelayLineAudioProc
     addAndMakeVisible (drySlider);
     addAndMakeVisible (dryLabel);
     
-    timeSlider.setRange (10, 950, 100); // to guarantee a low dalay value we set the interval bellow the 20ms
+    timeSlider.setRange (1.0, 20.0, 0.1); // to guarantee a low dalay value we set the interval bellow the 20ms
     timeSlider.setTextBoxStyle (juce::Slider::TextBoxRight, false, 100, 20);
     timeSlider.addListener(this);
     timeLabel.setText ("Time", juce::dontSendNotification);
@@ -43,27 +43,40 @@ DelayLineAudioProcessorEditor::DelayLineAudioProcessorEditor (DelayLineAudioProc
     addAndMakeVisible (timeLabel);
     
     //setting the LFO value
-    lfoSpeed.setRange(0.1, 10,0.1);
+    lfoSpeed.setRange(0.05, 2.0);
     lfoSpeed.addListener(this);
     //lfoSpeed.setSliderStyle(juce::Slider::Rotary);
     
     lfoSpeed.setTextBoxStyle (juce::Slider::TextBoxRight, false, 100, 20);
     speedLabel.setText("Speed", juce::dontSendNotification);
     
-    sweepWidth.setRange(1,50); //TODO da controllare 
+    sweepWidth.setRange(0.0, 20.0); //TODO da controllare 
     //sweepWidth.setSliderStyle(juce::Slider::Rotary);
     
     sweepWidth.setTextBoxStyle (juce::Slider::TextBoxRight, false, 100, 20);
     sweepWidth.addListener(this);
-    amplitude.setText("Amount", juce::dontSendNotification);
+    amplitude.setText("Width", juce::dontSendNotification);
+
+    
+
     
     addAndMakeVisible (lfoSpeed);
     addAndMakeVisible (sweepWidth);
     addAndMakeVisible(amplitude);
     addAndMakeVisible(speedLabel);
+
+    feedbackSlider.setRange(0.0, 0.5);
+    feedbackSlider.setTextBoxStyle(juce::Slider::TextBoxRight, false, 100, 20);
+    feedbackSlider.addListener(this);
+    feedbackLabel.setText("Feedback", juce::dontSendNotification);
+
+    addAndMakeVisible(feedbackSlider);
+    addAndMakeVisible(feedbackLabel);
+
     
     
-    setSize (400, 300);
+    
+    setSize (400, 400);
     //********************************************************************************************//
 }
 
@@ -101,9 +114,15 @@ void DelayLineAudioProcessorEditor::resized()
     
     speedLabel.setBounds (10, 130, 90, 20);
     lfoSpeed.setBounds (100, 130, getWidth() - 110, 20);
+
+
+    amplitude.setBounds (10, 210, 90, 20);
+    sweepWidth.setBounds (100, 210, getWidth() - 110, 20);
+
+    feedbackLabel.setBounds(10, 170, 90, 20);
+    feedbackSlider.setBounds(100, 170, getWidth() - 110, 20);
+
     
-    amplitude.setBounds (10, 170, 90, 20);
-    sweepWidth.setBounds (100, 170, getWidth() - 110, 20);
     
     
     //********************************************************************************************//
@@ -131,6 +150,11 @@ void DelayLineAudioProcessorEditor::sliderValueChanged(juce::Slider *slider)
     {
         audioProcessor.setSpeed(lfoSpeed.getValue());
     }
+    else if (slider == &feedbackSlider)
+    {
+        audioProcessor.setFeedback(feedbackSlider.getValue());
+    }
     
+
 }
 //********************************************************************************************//

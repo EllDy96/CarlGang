@@ -39,6 +39,9 @@ DelayLineAudioProcessor& audioProcessor;
     // 1) Delay sliders and labels
     juce::Slider wetSlider;
     juce::Label wetLabel;
+
+    juce::Slider feedbackSlider;
+    juce::Label feedbackLabel;
     
     juce::Slider drySlider;
     juce::Label dryLabel;
@@ -52,6 +55,10 @@ DelayLineAudioProcessor& audioProcessor;
     
     juce::Slider lfoSpeed;
     juce::Label speedLabel;
+
+    
+
+
 
     //********************************************************************************************//
     

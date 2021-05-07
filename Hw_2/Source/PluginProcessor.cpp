@@ -108,17 +108,22 @@ void DelayLineAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBl
     // 9) Initialize the variables that we are going to need in processBlock function: 
     // the buffer, the write and read pointer, the delay value
   
-    dBuf.setSize(getTotalNumOutputChannels(),sampleRate*0.025); // TODO check the size 
+    dBuf.setSize(2, (int)ceil((20*20)*sampleRate)); // TODO check the size
     dBuf.clear(); 
     dBufLength= dBuf.getNumSamples();
     
     dw = 0;
     dr = 1;
-    ds = 50000;
+    ds = 0.0025;
     
-    sweepWidth=0;
-    speed=0;
+    sweepWidth=1;
+    speed=0.2;
     phase=0;
+
+    dry = 0.5;
+    wet = 0.5;
+    feedback = 0;
+
     
     
     //********************************************************************************************//
@@ -191,10 +196,12 @@ void DelayLineAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, ju
     int numSamples = buffer.getNumSamples();
     float wet_now = wet;
     float dry_now = dry;
-    int ds_now = ds;
+    float ds_now = ds;
+    float sweepWidth_now = sweepWidth;
+    float speed_now = speed;
+    float feedback_now = feedback;
+   
     
-    float sweepWidth_now= sweepWidth;
-    float speed_now= speed;
     
     float* channelOutDataL = buffer.getWritePointer(0);
     float* channelOutDataR = buffer.getWritePointer(1);
@@ -204,14 +211,15 @@ void DelayLineAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, ju
     for (int i = 0; i < numSamples; ++i) {
         // setSample(int destChannel, int destSample, Type newValue)	
         const float in = channelInData[i];
-        dBuf.setSample(0, dw, channelInData[i]);
-        dBuf.setSample(1, dw, channelInData[i]);
-        
         float interpolatedSample1 = 0.0;
-        float interpolatedSample2= 0.0;
-        float currentDelay = sweepWidth_now * (0.5f + 0.5f * sinf(2.0 * M_PI * phase));
+        float interpolatedSample2 = 0.0;
         
-        float dr = fmodf((float)dw- (float)(currentDelay * getSampleRate())+ (float)dBufLength- 3.0,(float)dBufLength);
+        
+        float currentDelay = ds_now + 0.5f * sweepWidth_now * (1.0f + sinf(2.0 * M_PI * phase));
+        
+        float temp = (float)dw - (float)(currentDelay * getSampleRate()) + (float)dBufLength - 3.0;
+        //(float)dw - (float)(currentDelay * getSampleRate()) + (float)dBufLength - 3.0;
+        dr = fmodf(temp,(float)dBufLength);
 
         // Use linear interpolation to read a fractional index
         // into the buffer.
@@ -228,12 +236,16 @@ void DelayLineAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, ju
         // With feedback, what we read is included in what gets
         // stored in the buffer, otherwise it’s just a simple
         // delay line of the input signal.
-        dBuf.setSample(0, dw, in); 
-        dBuf.setSample(1, dw, in);
-        //+ (interpolatedSample * feedback_);
-        
-        if(++dw >= dBufLength)
+        dBuf.setSample(0, dw, in + interpolatedSample1 * feedback_now);
+        dBuf.setSample(1, dw, in + interpolatedSample2 * feedback_now);
+
+        if (++dw >= dBufLength)
             dw = 0;
+
+        channelOutDataL[i] = dry_now * in + wet_now * interpolatedSample1;
+        channelOutDataR[i] = channelOutDataL[i];
+        
+        
                                                         
         // Store the output in the buffer, replacing the input
         //channelInData[i] = in + wet_now * interpolatedSample1;
@@ -244,8 +256,7 @@ void DelayLineAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, ju
             phase -= 1.0;
         
         
-        channelOutDataL[i] = dry_now * in + wet_now * interpolatedSample1;
-        channelOutDataR[i] = dry_now * in + wet_now * interpolatedSample2;
+        
 
         //annelOutDataL[i] = dry_now * channelInData[i] + wet_now * dBuf.getSample(0, dr); 
         //channelOutDataR[i] = dry_now * channelInData[i] + wet_now * dBuf.getSample(1, dr);
@@ -253,7 +264,7 @@ void DelayLineAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, ju
         //dw = (dw + 1 ) % ds_now ;
         //dr = (dr + 1 ) % ds_now ;
     }
-     
+ 
     
     //********************************************************************************************//
 }
@@ -304,15 +315,20 @@ void DelayLineAudioProcessor::set_dry(float val)
 }
 void DelayLineAudioProcessor::set_ds(int val)
 {
-    ds = val;
+    ds = (float) val*0.001;
 }
 void DelayLineAudioProcessor::setSweepWidth( float val)
 {
-    sweepWidth= val;
+    sweepWidth= (float)val*0.001;
 }
 void DelayLineAudioProcessor::setSpeed( float val)
 {
     speed= val;
+}
+
+void DelayLineAudioProcessor::setFeedback(float val)
+{
+    feedback = val;
 }
     
 //********************************************************************************************//

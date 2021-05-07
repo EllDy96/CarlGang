@@ -61,6 +61,7 @@ public:
     void set_ds(int val);
     void setSweepWidth(float val);
     void setSpeed(float val);
+    void setFeedback(float val);
     
     
 
@@ -77,17 +78,17 @@ public:
     
     float wet;
     float dry;
-    int ds;
+    float feedback;
+
+    float ds;
     
     //juce::AudioSampleBuffer lfoBuf;
     
     float sweepWidth;
     float speed;
     //float delay;
-    double sampleRate;
     
     int dBufLength; // the length of the delay buffer
-    float currentDelay;  
     float phase; // the oscillator phase
     //********************************************************************************************//
 };

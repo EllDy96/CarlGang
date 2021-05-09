@@ -218,27 +218,35 @@ void FlangerAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce
         }
 
         float currentDelay = baseDelay_now + sweepWidth_now * waveformFunction;
+        dr = fmodf((float)dw - (float)(currentDelay * getSampleRate()) + (float)dBufLength, (float)dBufLength);
+        int dr_sample = floorf(dr);
 
+
+
+        //Cubic Interpolation
+        float fraction = dr - (float)dr_sample;
+        float fractionSqrt = fraction * fraction;
+        float fractionCube = fractionSqrt * fraction;
+
+        float sample0 = dBuf.getSample(0, (dr - 1 + dBufLength) % dBufLength);
+        float sample1 = dBuf.getSample(0, dr);
+        float sample2 = dBuf.getSample(0, (dr+1) %dBufLength);
+        float sample3 = dBuf.getSample(0, (dr + 2) % dBufLength);
+
+        float a0 = -0.5f * sample0 + 1.5f * sample1 - 1.5f * sample2 + 0.5f * sample3;
+        float a1 = sample0 - 2.5f * sample1 + 2.0f * sample2 - 0.5f * sample3;
+        float a2 = -0.5f * sample0 + 0.5f * sample2;
+        float a3 = sample1;
+        interpolatedSample = a0 * fractionCube + a1 * fractionSqrt + a2 * fraction + a3;
+
+
+        // LINEAR INTERPOLATION
+        //float fraction = dr - floorf(dr);
+        //int previousSample = (int)floorf(dr);
+        //int nextSample = (previousSample + 1) % dBufLength;
+        //interpolatedSample = fraction * dBuf.getSample(0, nextSample) + (1.0f - fraction) * dBuf.getSample(0, previousSample);
         
-
-        float temp = (float)dw - (float)(currentDelay * getSampleRate()) + (float)dBufLength - 3.0;
-        //(float)dw - (float)(currentDelay * getSampleRate()) + (float)dBufLength - 3.0;
-        dr = fmodf(temp, (float)dBufLength);
-
-        // Use linear interpolation to read a fractional index
-        // into the buffer.
-        float fraction = dr - floorf(dr);
-
-
-        int previousSample = (int)floorf(dr);
-
-        int nextSample = (previousSample + 1) % dBufLength;
-
-        interpolatedSample = fraction * dBuf.getSample(0, nextSample) + (1.0f - fraction) * dBuf.getSample(0, previousSample);
-        // Store the current information in the delay buffer.
-        // With feedback, what we read is included in what gets
-        // stored in the buffer, otherwise it’s just a simple
-        // delay line of the input signal.
+        
         dBuf.setSample(0, dw, in + interpolatedSample * feedback_now);
         dBuf.setSample(1, dw, in + interpolatedSample * feedback_now);
 
@@ -248,7 +256,7 @@ void FlangerAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce
         channelOutDataL[i] = in + feedforward_now * interpolatedSample;
         channelOutDataR[i] = channelOutDataL[i];
 
-        // Update the LFO phase, keeping it in the range 0-1
+        // LFO phase update 
         phase += lfoFrequency_now * (1 / getSampleRate());
         if (phase >= 1.0)
             phase -= 1.0;

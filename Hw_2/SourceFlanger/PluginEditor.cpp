@@ -35,7 +35,7 @@ FlangerAudioProcessorEditor::FlangerAudioProcessorEditor (FlangerAudioProcessor&
     addAndMakeVisible(baseDelaySlider);
     addAndMakeVisible(baseDelayLabel);
 
-    //Sweep Width
+    //LFO Sweep Width
     sweepWidthSlider.setTextBoxStyle(juce::Slider::TextBoxRight, false, 100, 20);
     sweepWidthLabel.setText("LFO Width", juce::dontSendNotification);
     addAndMakeVisible(sweepWidthSlider);
@@ -47,13 +47,21 @@ FlangerAudioProcessorEditor::FlangerAudioProcessorEditor (FlangerAudioProcessor&
     addAndMakeVisible(lfoFrequencySlider);
     addAndMakeVisible(lfoFrequencyLabel);
 
+    //LFO Waveform
+    lfoWaveformBox.addItem("Sine", 1);
+    lfoWaveformBox.addItem("Triangle", 2);
+    lfoWaveformBox.addItem("Sawtooth", 3);
+    lfoWaveformBox.setJustificationType(juce::Justification::centred);
+    addAndMakeVisible(lfoWaveformBox);
+
+
     
     feedforwardGainSliderAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.apvts, "GFF", feedforwardGainSlider);
     feedbackGainSliderAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.apvts, "GFB", feedbackGainSlider);
     baseDelaySliderAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.apvts, "DELAY", baseDelaySlider);
     sweepWidthSliderAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.apvts, "WIDTH", sweepWidthSlider);
     lfoFrequencySliderAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.apvts, "FREQ", lfoFrequencySlider);
-
+    lfoWaveformBoxAttachment = std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment>(audioProcessor.apvts, "WVFORM", lfoWaveformBox);;
 
 }
 
@@ -90,4 +98,6 @@ void FlangerAudioProcessorEditor::resized()
 
     lfoFrequencyLabel.setBounds(10, 170, 90, 20);
     lfoFrequencySlider.setBounds(100, 170, getWidth() - 110, 20);
+
+    lfoWaveformBox.setBounds(10, 210, 130, 20);
 }

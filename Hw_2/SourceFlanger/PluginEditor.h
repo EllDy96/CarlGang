@@ -49,11 +49,14 @@ private:
     juce::Slider lfoFrequencySlider;
     juce::Label lfoFrequencyLabel;
 
+    juce::ComboBox lfoWaveformBox;
+
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> feedforwardGainSliderAttachment;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> feedbackGainSliderAttachment;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> baseDelaySliderAttachment;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> sweepWidthSliderAttachment;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> lfoFrequencySliderAttachment;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::ComboBoxAttachment> lfoWaveformBoxAttachment;
 
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FlangerAudioProcessorEditor)

@@ -172,13 +172,12 @@ void FlangerAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce
     }
 
     int numSamples = buffer.getNumSamples();
-    float wet_now = *apvts.getRawParameterValue("GFF");
-    float dry_now = 1;
-    float ds_now = *apvts.getRawParameterValue("DELAY") * 0.001f;
+    float feedforward_now = *apvts.getRawParameterValue("GFF");
+    float baseDelay_now = *apvts.getRawParameterValue("DELAY") * 0.001f;
     float sweepWidth_now = *apvts.getRawParameterValue("WIDTH") * 0.001f;
-    float speed_now = *apvts.getRawParameterValue("FREQ");
+    float lfoFrequency_now = *apvts.getRawParameterValue("FREQ");
     float feedback_now = *apvts.getRawParameterValue("GFB");
-
+    int lfoWaveformIndex = (int)*apvts.getRawParameterValue("WVFORM");
 
 
     float* channelOutDataL = buffer.getWritePointer(0);
@@ -189,11 +188,38 @@ void FlangerAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce
     for (int i = 0; i < numSamples; ++i) {
         // setSample(int destChannel, int destSample, Type newValue)	
         const float in = channelInData[i];
-        float interpolatedSample1 = 0.0;
-        float interpolatedSample2 = 0.0;
+        float interpolatedSample = 0.0f;
+        float waveformFunction = 0.0f;
 
+        switch (lfoWaveformIndex)
+        {
+        case 0:
+            //Sine
+            waveformFunction = 0.5f + 0.5f * sinf(2.0f * M_PI * phase);
+            break;
+        case 1:
+            //Triangle
+            if (phase < 0.25f)
+                waveformFunction = 0.5f + 2.0f * phase;
+            else if (phase < 0.75f)
+                waveformFunction = 1.0f - 2.0f * (phase - 0.25f);
+            else
+                waveformFunction = 2.0f * (phase - 0.75f);
+            break;
+        case 2:
+            //Sawtooth
+            if (phase < 0.5f)
+                waveformFunction = 0.5f + phase;
+            else
+                waveformFunction = phase - 0.5f;
+            break;
+        default:
+            break;
+        }
 
-        float currentDelay = ds_now + 0.5f * sweepWidth_now * (1.0f + sinf(2.0 * M_PI * phase));
+        float currentDelay = baseDelay_now + sweepWidth_now * waveformFunction;
+
+        
 
         float temp = (float)dw - (float)(currentDelay * getSampleRate()) + (float)dBufLength - 3.0;
         //(float)dw - (float)(currentDelay * getSampleRate()) + (float)dBufLength - 3.0;
@@ -208,23 +234,22 @@ void FlangerAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce
 
         int nextSample = (previousSample + 1) % dBufLength;
 
-        interpolatedSample1 = fraction * dBuf.getSample(0, nextSample) + (1.0f - fraction) * dBuf.getSample(0, previousSample);
-        interpolatedSample2 = fraction * dBuf.getSample(1, nextSample) + (1.0f - fraction) * dBuf.getSample(1, previousSample);
+        interpolatedSample = fraction * dBuf.getSample(0, nextSample) + (1.0f - fraction) * dBuf.getSample(0, previousSample);
         // Store the current information in the delay buffer.
         // With feedback, what we read is included in what gets
         // stored in the buffer, otherwise it’s just a simple
         // delay line of the input signal.
-        dBuf.setSample(0, dw, in + interpolatedSample1 * feedback_now);
-        dBuf.setSample(1, dw, in + interpolatedSample2 * feedback_now);
+        dBuf.setSample(0, dw, in + interpolatedSample * feedback_now);
+        dBuf.setSample(1, dw, in + interpolatedSample * feedback_now);
 
         if (++dw >= dBufLength)
             dw = 0;
 
-        channelOutDataL[i] = dry_now * in + wet_now * interpolatedSample1;
+        channelOutDataL[i] = in + feedforward_now * interpolatedSample;
         channelOutDataR[i] = channelOutDataL[i];
 
         // Update the LFO phase, keeping it in the range 0-1
-        phase += speed_now * (1 / getSampleRate());
+        phase += lfoFrequency_now * (1 / getSampleRate());
         if (phase >= 1.0)
             phase -= 1.0;
 
@@ -274,6 +299,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout FlangerAudioProcessor::creat
     parameters.push_back(std::make_unique<juce::AudioParameterFloat>("DELAY", "Delay", 1.0f, 20.0f, 2.5f));
     parameters.push_back(std::make_unique<juce::AudioParameterFloat>("WIDTH", "LFO Width", 1.0f, 20.0f, 10.0f));
     parameters.push_back(std::make_unique<juce::AudioParameterFloat>("FREQ", "LFO Frequency", 0.05f, 2.0f, 0.2f));
+    parameters.push_back(std::make_unique<juce::AudioParameterChoice>("WVFORM", "LFO Waveform", juce::StringArray("Sine","Triangle","Sawtooth"), 0));
 
     return { parameters.begin(), parameters.end() };
 }

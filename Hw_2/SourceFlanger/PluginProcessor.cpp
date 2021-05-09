@@ -101,9 +101,14 @@ void FlangerAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBloc
     // initialisation that you need..
 
     //Buffer init
-    dBuf.setSize(2, 2000000); // TODO check the size
+    float maxDelay = apvts.getParameterRange("DELAY").end;
+    float maxWidth = apvts.getParameterRange("WIDTH").end;
+    int totalFlagerDelaySamples = (int)((maxDelay + maxWidth)*(float)sampleRate) + 1;
+    
+    dBuf.setSize(2, totalFlagerDelaySamples);
     dBuf.clear();
     dBufLength = dBuf.getNumSamples();
+
 
     //Private members init
     dw = 0;

@@ -133,6 +133,9 @@ private:
 
     juce::ComboBox lfoWaveformBox;
 
+    juce::Label delayPanelLabel;
+    juce::Label lfoPanelLabel;
+
     BlueKnobStyle blueKnob;
     MagentaKnobStyle mageKnob;
 

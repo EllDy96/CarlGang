@@ -308,10 +308,10 @@ juce::AudioProcessorValueTreeState::ParameterLayout FlangerAudioProcessor::creat
     std::vector<std::unique_ptr<juce::RangedAudioParameter>> parameters;
 
     parameters.push_back(std::make_unique<juce::AudioParameterFloat>("GFF", "Amount", 0.0f, 1.0f, 1.0f));
-    parameters.push_back(std::make_unique<juce::AudioParameterFloat>("GFB", "Feedback", 0.0f, 0.5f, 0.0f));
-    parameters.push_back(std::make_unique<juce::AudioParameterFloat>("DELAY", "Delay", 1.0f, 20.0f, 2.5f));
-    parameters.push_back(std::make_unique<juce::AudioParameterFloat>("WIDTH", "LFO Width", 1.0f, 20.0f, 10.0f));
-    parameters.push_back(std::make_unique<juce::AudioParameterFloat>("FREQ", "LFO Frequency", 0.05f, 2.0f, 0.2f));
+    parameters.push_back(std::make_unique<juce::AudioParameterFloat>("GFB", "Feedback", 0.0f, 0.5f, 0.5f));
+    parameters.push_back(std::make_unique<juce::AudioParameterFloat>("DELAY", "Delay", 1.0f, 5.0f, 1.5f));
+    parameters.push_back(std::make_unique<juce::AudioParameterFloat>("WIDTH", "LFO Width", 1.0f, 20.0f, 1.0f));
+    parameters.push_back(std::make_unique<juce::AudioParameterFloat>("FREQ", "LFO Frequency", 0.05f, 2.0f, 0.1f));
     parameters.push_back(std::make_unique<juce::AudioParameterChoice>("WVFORM", "LFO Waveform", juce::StringArray("Sine","Triangle","Sawtooth"), 0));
 
     return { parameters.begin(), parameters.end() };

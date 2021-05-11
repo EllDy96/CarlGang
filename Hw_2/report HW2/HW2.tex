@@ -118,7 +118,9 @@ The parameters we chose for our flanger plugin are the following:
 float currentDelay = delay + sweepWidth * waveformFunction;
 \end{verbatim}
 \end{itemize}
-\subsection{Altra subsection}
+\subsection{GUI implementation}
+In order to create the knobs, we created two custom classes (BlueKnobStyle,MagentaKnobStyle)\footnote{The classes are exactly the same except the colour of the smaller circle} in the \emph{PluginEditor.h} that use the juce method \textbf{LookAndFeel\_V4}. The class draw the knob starting from a rotary slider, drawing two concentric circles and rotating a rectangle using the method juce::AffineTransform. Then we defined two elements (blueKnob,mageKnob) of the classes in the AudioProcessorEditor that gives the style defined to the slider using the function \emph{setLookAndFeel} in the editor compiler.
+
 \section{Results and applications}
 
 \begin{verbatim}

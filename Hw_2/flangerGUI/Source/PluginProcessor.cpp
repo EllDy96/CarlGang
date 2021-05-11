@@ -23,7 +23,8 @@ FlangerAudioProcessor::FlangerAudioProcessor()
                       #endif
                        .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
                      #endif
-                       ), apvts(*this, nullptr, "Parameters", createParameters())
+                       ), apvts(*this, nullptr, "Parameters", createParameters()) 
+                       // Adding the instatiation of the Value Tree State to the Initialization list
 #endif
 {
 }
@@ -100,10 +101,10 @@ void FlangerAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBloc
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
 
-    //Buffer init
+    //Delay buffer init as max sum of a constant and an alternating component
     float maxDelay = apvts.getParameterRange("DELAY").end;
     float maxWidth = apvts.getParameterRange("WIDTH").end;
-    int totalFlagerDelaySamples = (int)((maxDelay + maxWidth)*(float)sampleRate) + 1;
+    int totalFlagerDelaySamples = (int)((maxDelay + maxWidth)*(float)sampleRate) + 1; 
     
     dBuf.setSize(2, totalFlagerDelaySamples);
     dBuf.clear();
@@ -176,26 +177,33 @@ void FlangerAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce
         // ..do something to the data...
     }
 
+    //Retrieving all the current parameters from the Value Tree State for the current batch of samples in buffer
     int numSamples = buffer.getNumSamples();
     float feedforward_now = *apvts.getRawParameterValue("GFF");
-    float baseDelay_now = *apvts.getRawParameterValue("DELAY") * 0.001f;
-    float sweepWidth_now = *apvts.getRawParameterValue("WIDTH") * 0.001f;
+    float baseDelay_now = *apvts.getRawParameterValue("DELAY") * 0.001f; //ms to s
+    float sweepWidth_now = *apvts.getRawParameterValue("WIDTH") * 0.001f; //ms to s
     float lfoFrequency_now = *apvts.getRawParameterValue("FREQ");
     float feedback_now = *apvts.getRawParameterValue("GFB");
     int lfoWaveformIndex = (int)*apvts.getRawParameterValue("WVFORM");
 
-
+    //Getting buffer output channel pointers
     float* channelOutDataL = buffer.getWritePointer(0);
     float* channelOutDataR = buffer.getWritePointer(1);
 
+    //Getting buffer input channel pointer
     const float* channelInData = buffer.getReadPointer(0);
 
+    //For each sample of the buffer
     for (int i = 0; i < numSamples; ++i) {
-        // setSample(int destChannel, int destSample, Type newValue)	
+        //Current input value	
         const float in = channelInData[i];
         float interpolatedSample = 0.0f;
         float waveformFunction = 0.0f;
 
+        //Definitions of the LFO's wave functions, by convention:
+        // lfoWaveformIndex == 0 --> Sine
+        // lfoWaveformIndex == 1 --> Triangle
+        // lfoWaveformIndex == 2 --> Sawtooth
         switch (lfoWaveformIndex)
         {
         case 0:
@@ -222,27 +230,31 @@ void FlangerAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce
             break;
         }
 
+         //Definition of the total current delay [in seconds] as a sum of a constant and an alternating component
         float currentDelay = baseDelay_now + sweepWidth_now * waveformFunction;
+        //Computation of the delay read pointer as distance with the delay write pointer
         dr = fmodf((float)dw - (float)(currentDelay * getSampleRate()) + (float)dBufLength, (float)dBufLength);
         int dr_sample = floorf(dr);
 
 
 
-        //Cubic Interpolation
-        float fraction = dr - (float)dr_sample;
-        float fractionSqrt = fraction * fraction;
-        float fractionCube = fractionSqrt * fraction;
+        //CUBIC INTERPOLATION
+        float fraction = dr - (float)dr_sample; //Decimal residue
+        float fractionSquare = fraction * fraction; //Square coefficient
+        float fractionCube = fractionSquare * fraction; //Cube coefficient
 
-        float sample0 = dBuf.getSample(0, (dr - 1 + dBufLength) % dBufLength);
-        float sample1 = dBuf.getSample(0, dr);
-        float sample2 = dBuf.getSample(0, (dr+1) %dBufLength);
-        float sample3 = dBuf.getSample(0, (dr + 2) % dBufLength);
+        //For special cases as dr=0 or ds=dBufLength, we exploit the circularity of the delay buffer
+        float sample0 = dBuf.getSample(0, (dr - 1 + dBufLength) % dBufLength); //Previous sample 
+        float sample1 = dBuf.getSample(0, dr); //Current sample
+        float sample2 = dBuf.getSample(0, (dr + 1) % dBufLength); //Next sample
+        float sample3 = dBuf.getSample(0, (dr + 2) % dBufLength); //2 step next sample
 
+        //Computation of the coefficients and the interpolated sample
         float a0 = -0.5f * sample0 + 1.5f * sample1 - 1.5f * sample2 + 0.5f * sample3;
         float a1 = sample0 - 2.5f * sample1 + 2.0f * sample2 - 0.5f * sample3;
         float a2 = -0.5f * sample0 + 0.5f * sample2;
         float a3 = sample1;
-        interpolatedSample = a0 * fractionCube + a1 * fractionSqrt + a2 * fraction + a3;
+        interpolatedSample = a0 * fractionCube + a1 * fractionSquare + a2 * fraction + a3;
 
 
         // LINEAR INTERPOLATION
@@ -251,13 +263,15 @@ void FlangerAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce
         //int nextSample = (previousSample + 1) % dBufLength;
         //interpolatedSample = fraction * dBuf.getSample(0, nextSample) + (1.0f - fraction) * dBuf.getSample(0, previousSample);
         
-        
+        //We feedback the signal
         dBuf.setSample(0, dw, in + interpolatedSample * feedback_now);
         dBuf.setSample(1, dw, in + interpolatedSample * feedback_now);
 
+        //Increment the delay write index
         if (++dw >= dBufLength)
             dw = 0;
 
+        //Store the result in the output channel
         channelOutDataL[i] = in + feedforward_now * interpolatedSample;
         channelOutDataR[i] = channelOutDataL[i];
 
@@ -305,8 +319,12 @@ juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 
 juce::AudioProcessorValueTreeState::ParameterLayout FlangerAudioProcessor::createParameters()
 {
+    //In this vector are contained all the parameters as unique pointers to a RangedAudioParameter, helper
+    //class for various types of parameters in JUCE (e.g. AudioParameterFloat and AudioParameterChoice)
     std::vector<std::unique_ptr<juce::RangedAudioParameter>> parameters;
 
+    //We push the parameters in the vector instantiating the memory for the various parameters' pointers,
+    //the generic AudioParameter has constructor: (StringID, name, rangeStart, rangeEnd, defaultValue)
     parameters.push_back(std::make_unique<juce::AudioParameterFloat>("GFF", "Amount", 0.0f, 1.0f, 1.0f));
     parameters.push_back(std::make_unique<juce::AudioParameterFloat>("GFB", "Feedback", 0.0f, 0.5f, 0.5f));
     parameters.push_back(std::make_unique<juce::AudioParameterFloat>("DELAY", "Delay", 1.0f, 5.0f, 1.5f));

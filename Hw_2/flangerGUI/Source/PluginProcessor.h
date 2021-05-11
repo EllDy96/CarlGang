@@ -53,10 +53,12 @@ public:
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
+    //Declaration of the Value Tree State
     juce::AudioProcessorValueTreeState apvts;
 
 private:
 
+    //Method that initiate all the plugin parameters in the Value Tree State 
     juce::AudioProcessorValueTreeState::ParameterLayout createParameters();
 
     juce::AudioSampleBuffer dBuf; //Delay buffer

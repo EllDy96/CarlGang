@@ -1,6 +1,6 @@
 # Implementation of a Flanger audio plug-in
 ### Introduction
-Implementation of a Flanger audio plug-in with feedback. It is designed in **JUCE** implementing the audio processor and the Graphical User Interface
+Implementation of a Flanger audio plug-in with feedback, designed in **JUCE** implementing the audio processor and the Graphical User Interface
 with **Projoucer**.  
 ### What is a flanger with feedback?
 The Flanger is a Delay based audio effect. It is a linear audio filter based on the Delay effect but with something more. Its typical sound is produced by changing the delay length over time, creating a motion of regularly spaced
@@ -38,7 +38,7 @@ and the output of the Delay line as:
 M[n] expresses the delay length over a sample n.
 
 ### Plug-in parameters
-These are the parameters we chose for our Flanger plugin that apper in the GUI and could be modify by the user:
+These are the parameters we chose for our Flanger plugin that apper in the GUI and could be modified by the user:
 - **Feedforward** (Mix) (knob): It represents the amount of delayed signal that is mixed in with the
 original one. Having a value of 0 means that we are considering only the
 dry signal. Increasing this value (up to 1), one can adjust the balance
@@ -87,9 +87,9 @@ ment a simple linear interpolation, but then we opted instead for the **cubic
 interpolation** because the former was causing some artefacts. 
 In either case, we left the linear interpolation commented in the code for a quick comparison.
 
-In order to handle the multiple waveforms of the LFO, we deffined the wave
+In order to handle the multiple waveforms of the LFO, we defined the wave
 functions through a switch case in which the phase varies incrementally.
-Given the wave functions, it easy to compute the current delay with the
+Given the wave functions, it's easy to compute the current delay with the
 user-defined parameters *width* and *delay* and hence the delay read pointer:
 
 `float currentDelay = delay + sweepWidth * waveformFunction;`

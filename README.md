@@ -1,6 +1,6 @@
 # Implementation of a Flanger audio plug-in
 ### Introduction
-Implementation of a Flanger audio plug-in with feedback. It is designed in **JUCE** using **Projoucer** for the audio-processor and the Graphical User Interface
+Implementation of a Flanger audio plug-in with feedback designed in **JUCE** using **Projoucer** for the audio-processor and the Graphical User Interface
 implementation. 
 ### What is a flanger with feedback?
 The Flanger is a Delay based audio effect. It is a linear audio filter based on the Delay effect but with something more. Its typical sound is produced by changing the delay length over time, creating a motion of regularly spaced

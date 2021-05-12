@@ -123,7 +123,7 @@ delay with the following parameters:
 The result can be played at the following link: [Audio Demo](https://polimi365-my.sharepoint.com/:u:/g/personal/10751438_polimi_it/ESSG1VdlCZVMsWpJDyI5JisBTeKSS_7I16fRfVOw2sIelg?e=JC0Wi9)
 or can be downloaded [here](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/flangerAudioTest.mp3).
 
-Here bellow you can see the User Interface  start-up window of the plugin with all the
+Here below you can see the User Interface  start-up window of the plugin with all the
 default parameters:
 
 ![User Interface](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/report%20HW2/ui.png)

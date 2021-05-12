@@ -120,10 +120,12 @@ delay with the following parameters:
 - LFO Freq = 0:1 Hz
 - Waveform = sine
 
-The result can be played at the following link: [Audio Demo](https://polimi365-my.sharepoint.com/:u:/g/personal/10751438_polimi_it/ESSG1VdlCZVMsWpJDyI5JisBTeKSS_7I16fRfVOw2sIelg?e=JC0Wi9).
+The result can be played at the following link: [Audio Demo](https://polimi365-my.sharepoint.com/:u:/g/personal/10751438_polimi_it/ESSG1VdlCZVMsWpJDyI5JisBTeKSS_7I16fRfVOw2sIelg?e=JC0Wi9)
 or can be download [here](..).
+
 Here bellow you can see the User Interface  start-up window of the plugin with all the
 default parameters:
+
 ![User Interface](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/report%20HW2/ui.png)
 
-For a further explanation please see the [report](https://github.com/EllDy96/CarlGang/blob/master/Hw_1/report/CMLS%20HW1.pdf).
+For a further explanation please see the [report](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/report%20HW2/HW2.pdf).

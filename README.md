@@ -1,6 +1,6 @@
 # Implementation of a Flanger audio plug-in
 ### Introduction
-Implementation of a Flanger filter with feedback designed in **JUCE** using **Projoucer** for the audio-processor and the GUI implementation. 
+Implementation of a Flanger filter with feedback designed in **JUCE** using **Projucer** for the audio-processor and the GUI implementation. 
 ### What is a flanger with feedback?
 The Flanger is a Delay based audio effect. It is a linear audio filter based on the Delay effect but with something more. Its typical sound is produced by changing the delay length over time, creating a motion of regularly spaced
 notches in the frequency response of the filter. To create this motion we modulated the delay-time with a low-frequency oscillator (LFO) using three possible waveforms: sine, triangle and sawtooth. 
@@ -56,7 +56,7 @@ a chorus, so we fixed the max at 5 ms.
 - **LFO Width** (Sweep Width)  (knob): It allows the user to control the total amplitude of waveform of the
 LFO, in a range of [1:00; 20:00][ms].
 - **LFO Frequency** (Speed) (knob): The LFO frequency can be set in a range of [0:05; 2:00][Hz].
-- **Shape of the LFO Envelope**  (Combo Box) :It allows one to select which shape use for the LFO. For this plugin there
+- **Shape of the LFO Envelope**  (Combo Box): It allows one to select which shape use for the LFO. For this plugin there
 are three possible waveform shapes: Sine, Triangle and Sawtooth.
 ### Juce Implementation: the Audio Processor
 The first thing we decided to implement is the **Value Tree State**, a class used
@@ -122,7 +122,7 @@ delay with the following parameters:
 The result can be played at the following link: [Audio Demo](https://polimi365-my.sharepoint.com/:u:/g/personal/10751438_polimi_it/ESSG1VdlCZVMsWpJDyI5JisBTeKSS_7I16fRfVOw2sIelg?e=JC0Wi9)
 or can be downloaded [here](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/flangerAudioTest.mp3).
 
-Here below you can see the User Interface  start-up window of the plugin with all the
+Here below you can see the User Interface start-up window of the plugin with all the
 default parameters:
 
 ![User Interface](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/report%20HW2/ui.png)

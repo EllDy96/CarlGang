@@ -1,11 +1,11 @@
 # Implementation of a Flanger audio plug-in
-### Introduction
+## Introduction
 Implementation of a Flanger filter with feedback designed in **JUCE** using **Projucer** for the audio-processor and the GUI implementation. 
 ### What is a flanger with feedback?
 The Flanger is a Delay based audio effect. It is a linear audio filter based on the Delay effect but with something more. Its typical sound is produced by changing the delay length over time, creating a motion of regularly spaced
 notches in the frequency response of the filter. To create this motion we modulated the delay-time with a low-frequency oscillator (LFO) using three possible waveforms: sine, triangle and sawtooth. 
 One important constraint to achieve a Flanger effect is to set a short delay length (1-10 ms), to avoid the perception of multiple instruments as in the chorus effect.
-### What does the feeback do?
+### What does the feedback do?
 Adding a feedback control, the output of the delay line is routed
 back to its input. It will result in many successive copies of the input signal
 spaced several milliseconds apart and gradually decaying over time producing
@@ -15,8 +15,9 @@ the delay times in the Flanger are below the threshold of echo perception
 (roughly 50-70 ms), these copies are not heard as independent sounds as
 with the feedback of a pure delay effect.
 
-### Theoretical Implementation
+## Theoretical Implementation
 For the real implementation we started from its block diagram: 
+
 ![Flanger block diagram](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/report%20HW2/db_flanger.png)
 
 As we can see from the block diagram, we have two gains, gFB, which is the
@@ -58,7 +59,7 @@ LFO, in a range of [1:00; 20:00][ms].
 - **LFO Frequency** (Speed) (knob): The LFO frequency can be set in a range of [0:05; 2:00][Hz].
 - **Shape of the LFO Envelope**  (Combo Box): It allows one to select which shape use for the LFO. For this plugin there
 are three possible waveform shapes: Sine, Triangle and Sawtooth.
-### Juce Implementation: the Audio Processor
+## Juce Implementation: the Audio Processor
 The first thing we decided to implement is the **Value Tree State**, a class used
 to manage all the parameters of the plugin, or so to say, the entire plugin's
 state. It is very helpful in order to handle the connection between the objects

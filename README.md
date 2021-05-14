@@ -1,4 +1,4 @@
-# Implementation of a Flanger audio plug-in
+# Implementation of a Flanger plug-in
 ## Introduction
 Implementation of a Flanger filter with feedback designed in **JUCE** using **Projucer** for the audio-processor and the GUI implementation. 
 ### What is a flanger with feedback?

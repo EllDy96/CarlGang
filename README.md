@@ -132,4 +132,4 @@ default parameters:
 
 For a further explanation please see the [report](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/report%20HW2/HW2.pdf).
 
-If you want to try our plug-in in any DAW you can dowload the [VST-3 file](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/Flanger/VST3/Flanger.vst3).
+

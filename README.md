@@ -1,5 +1,5 @@
 # Implementation of a Flanger audio plug-in
-### Introduction
+## Introduction
 Implementation of a Flanger filter with feedback designed in **JUCE** using **Projucer** for the audio-processor and the GUI implementation. 
 ### What is a flanger with feedback?
 The Flanger is a Delay based audio effect. It is a linear audio filter based on the Delay effect but with something more. Its typical sound is produced by changing the delay length over time, creating a motion of regularly spaced
@@ -15,7 +15,7 @@ the delay times in the Flanger are below the threshold of echo perception
 (roughly 50-70 ms), these copies are not heard as independent sounds as
 with the feedback of a pure delay effect.
 
-### Theoretical Implementation
+## Theoretical Implementation
 For the real implementation we started from its block diagram: 
 ![Flanger block diagram](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/report%20HW2/db_flanger.png)
 
@@ -58,7 +58,7 @@ LFO, in a range of [1:00; 20:00][ms].
 - **LFO Frequency** (Speed) (knob): The LFO frequency can be set in a range of [0:05; 2:00][Hz].
 - **Shape of the LFO Envelope**  (Combo Box): It allows one to select which shape use for the LFO. For this plugin there
 are three possible waveform shapes: Sine, Triangle and Sawtooth.
-### Juce Implementation: the Audio Processor
+## Juce Implementation: the Audio Processor
 The first thing we decided to implement is the **Value Tree State**, a class used
 to manage all the parameters of the plugin, or so to say, the entire plugin's
 state. It is very helpful in order to handle the connection between the objects

@@ -17,6 +17,7 @@ with the feedback of a pure delay effect.
 
 ## Theoretical Implementation
 For the real implementation we started from its block diagram: 
+
 ![Flanger block diagram](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/report%20HW2/db_flanger.png)
 
 As we can see from the block diagram, we have two gains, gFB, which is the

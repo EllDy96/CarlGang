@@ -1,0 +1,1 @@
+C:\Users\david\juce-6.0.8-windows\Projects\ourFlanger\Builds\VisualStudio2019\x64\Debug\VST3\Flanger.vst3

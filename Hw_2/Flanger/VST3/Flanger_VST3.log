@@ -1,0 +1,3 @@
+﻿  include_juce_audio_plugin_client_VST3.cpp
+     Creating library C:\Users\david\juce-6.0.8-windows\Projects\ourFlanger\Builds\VisualStudio2019\x64\Debug\VST3\Flanger.lib and object C:\Users\david\juce-6.0.8-windows\Projects\ourFlanger\Builds\VisualStudio2019\x64\Debug\VST3\Flanger.exp
+  Flanger_VST3.vcxproj -> C:\Users\david\juce-6.0.8-windows\Projects\ourFlanger\Builds\VisualStudio2019\x64\Debug\VST3\Flanger.vst3

@@ -108,7 +108,9 @@ Then we defined two elements: *blueKnob, mageKnob* of the classes in the
 *AudioProcessorEditor* that gives the style defined to the slider using the
 function *setLookAndFeel* in the editor compiler.
 
-## Result and demo 
+## Result and demo
+Here is the [VST-3 file](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/Flanger/VST3/Flanger.vst3) that you can download If you want to try our plug-in in any DAW.
+
 To recreate the famous *jet passing overhead* characteristic sound of the
 Flanger, we recorded a clean guitar and applied some distortion (adding higher
 frequencies enhance the effect). And finally, we fed the guitar recording to

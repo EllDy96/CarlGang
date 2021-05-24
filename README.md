@@ -10,4 +10,4 @@ For further detailes plese see [Homework1 branch](https://github.com/EllDy96/Car
 Implementation of a Flanger plug-in with feedback designed in JUCE using Projucer for the audio-processor and the GUI implementation. For further detailes plese see [Homework2 branch](https://github.com/EllDy96/CarlGang/tree/Homework2).
 If you want to try our plug-in in any DAW you can dowload the [VST-3 file](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/Flanger/VST3/Flanger.vst3).
 ### Authores: 
-Davide Lionetti, Giovanni Affattato, Luca Cataneo, Jonathan Rocco.
+Davide Lionetti, Giovanni Affatato, Luca Cattaneo, Jonathan Rocco.

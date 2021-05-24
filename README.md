@@ -3,7 +3,10 @@
 Implementation of a Flanger filter with feedback designed in **JUCE** using **Projucer** for the audio-processor and the GUI implementation. 
 ### What is a flanger with feedback?
 The Flanger is a Delay based audio effect. It is a linear audio filter based on the Delay effect but with something more. Its typical sound is produced by changing the delay length over time, creating a motion of regularly spaced
-notches in the frequency response of the filter. To create this motion we modulated the delay-time with a low-frequency oscillator (LFO) using three possible waveforms: sine, triangle and sawtooth. 
+notches in the frequency response of the filter. 
+This delay modulation will create the effect similar to the sound of **a jet
+passing overhead**, in that the direct signal and the rejection from the ground
+arrive at a varying relative delay.To create this motion we modulated the delay-time with a low-frequency oscillator (LFO) using three possible waveforms: sine, triangle and sawtooth. 
 One important constraint to achieve a Flanger effect is to set a short delay length (1-10 ms), to avoid the perception of multiple instruments as in the chorus effect.
 ### What does the feedback do?
 Adding a feedback control, the output of the delay line is routed

@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    /*background-color: black;*/
+    display: flex;
+    flex-flow: column wrap;
+    width: 100vw;
+    height: 100vh;
+}
+
+#handposeDiv {
+    background-color: lightcyan;
+    width: 50%;
+    height: 50%;
+    order: 1;
+
+}
+
+#modDiv {
+    background-color: lightcoral;
+    width: 50%;
+    height: 50%;
+    order: 3;
+
+}
+
+#fxDiv {
+    background-color: lightsalmon;
+    width: 50%;
+    height: 50%;
+    flex-grow: 10;
+    order: 4;
+}
+
+#tiltDiv {
+    background-color: lightgreen;
+    width: 50%;
+    height: 50%;
+    order: 2;
+}

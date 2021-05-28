@@ -30,7 +30,7 @@ export default class Sphere {
                     p5.rotateY(i / 4)
                     p5.rotateX(i / 4)
 
-                    console.log(p5.parameter[0], p5.parameter[1])
+                    
                     p5.ellipse(0, 0, -i / 2 + p5.map(p5.parameter[0], 0, p5.paramMaxWidth, 0, 700) / 2)
                     p5.triangle(5, 0, i / 6 - 10 * p5.map(p5.parameter[1], 0, p5.paramMaxHeight, 0, 600), i / 80, i / 80, i / 80)
 

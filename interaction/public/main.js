@@ -70,6 +70,8 @@ let tilt = new Tilt(tiltCanvasWidth, tiltCanvasHeight, document.getElementById("
 
 sphere.myP5.paramMaxWidth = stream_width;
 sphere.myP5.paramMaxHeight = stream_height;
+hadnposeSkecth.myP5.paramMaxWidth = stream_width;
+hadnposeSkecth.myP5.paramMaxHeight = stream_height;
 
 
 //Window resize event listening

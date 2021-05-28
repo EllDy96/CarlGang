@@ -16,8 +16,12 @@ export default class HandposeSketch {
     let data;
 
     this.myP5 = new p5(function (p5) {
+      p5.paramMaxWidth = 0;
+      p5.paramMaxHeight = 0;
+
       p5.setup = function () {
         socket = io.connect('http://localhost:55123')
+
 
         p5.createCanvas(videoWidth, videoHeight);
         video = p5.createCapture(p5.VIDEO);
@@ -25,7 +29,7 @@ export default class HandposeSketch {
 
 
         handpose = ml5.handpose(video, p5.modelReady);
-        
+
 
         // This sets up an event that fills the global variable "predictions"
         // with an array every time new hand poses are detected
@@ -44,8 +48,9 @@ export default class HandposeSketch {
 
       p5.draw = function () {
         p5.translate(canvasWidth, 0);
-        p5.scale(-canvasWidth/videoWidth, canvasHeight/videoHeight);
+        p5.scale(-canvasWidth / videoWidth, canvasHeight / videoHeight);
         p5.image(video, 0, 0, p5.width, p5.height);
+
 
         // We can call both functions to draw all keypoints and the skeletons
         p5.drawKeypoints();
@@ -113,18 +118,27 @@ export default class HandposeSketch {
             palmMiddleFinger = Math.sqrt(Math.pow(palmBaseCoord[0] - middleFingerCoord[0], 2) +
               Math.pow(palmBaseCoord[1] - middleFingerCoord[1], 2));
 
-            palmMiddleSlope = Math.abs(Math.atan((middleFingerCoord[1] - palmBaseCoord[1])/(middleFingerCoord[0] - palmBaseCoord[0])) * 180 / 3.14159);
+            palmMiddleSlope = Math.abs(Math.atan((middleFingerCoord[1] - palmBaseCoord[1]) / (middleFingerCoord[0] - palmBaseCoord[0])) * 180 / 3.14159);
           }
 
           //Tell main that data is changed
           onChangeData(centroid, palmMiddleFinger, palmMiddleSlope);
 
+          //Normalizing the data [0,1]
+          let centroidSend = [0, 0]
+          centroidSend[0] = 1 - centroid[0] / p5.paramMaxWidth;
+          centroidSend[1] = 1 - centroid[1] / p5.paramMaxHeight;
+          let palmMiddleFingerSend = palmMiddleFinger / p5.paramMaxHeight;
+          let palmMiddleSlopeSend = palmMiddleSlope / 90;
+
+          console.log(centroidSend[0], centroidSend[1], palmMiddleFingerSend, palmMiddleSlopeSend)
+
 
           //Sending the data to the server
           data = {
-            centroid: centroid,
-            palmMiddleFinger: palmMiddleFinger,
-            palmMiddleSlope: palmMiddleSlope
+            centroid: centroidSend,
+            palmMiddleFinger: palmMiddleFingerSend,
+            palmMiddleSlope: palmMiddleSlopeSend
           }
 
           //console.log("Sending data!", data.centroid[1])

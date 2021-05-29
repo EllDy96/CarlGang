@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.26)  29 MAY 2021 09:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.26)  29 MAY 2021 09:41
 entering extended mode
 **./HW3.tex
 (HW3.tex
@@ -368,21 +368,21 @@ Package pdftex.def Info: logo_positivo.png  used on input line 49.
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.58 \endabstract
+l.57 \endabstract
                  {} [1]
 Chapter 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.80 	\[
+l.79 	\[
         d = \sqrt{(x_{pb} - x_{mf})^2 + (y_{pb} - y_{mf})^2}\] [1
 
 ]
 <arch.png, id=47, 858.70813pt x 183.18437pt>
 File: arch.png Graphic file (type png)
 <use arch.png>
-Package pdftex.def Info: arch.png  used on input line 90.
+Package pdftex.def Info: arch.png  used on input line 89.
 (pdftex.def)             Requested size: 343.47717pt x 73.27245pt.
  [2 <./arch.png>] (HW3.aux)
 Package rerunfilecheck Info: File `HW3.out' has not changed.
@@ -390,12 +390,12 @@ Package rerunfilecheck Info: File `HW3.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  9026 strings out of 479321
- 131113 string characters out of 2873173
+ 131161 string characters out of 2873173
  438024 words of memory out of 3000000
  26366 multiletter control sequences out of 15000+600000
  409812 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 81i,6n,88p,678b,409s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 81i,6n,88p,661b,409s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\il_gi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1200.pk> <C:\Users\il_gi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\tcrm2074.pk><C:/Miktex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Miktex/f
@@ -405,7 +405,7 @@ onts/type1/public/amsfonts/cm/cmr12.pfb><C:/Miktex/fonts/type1/public/amsfonts/
 cm/cmr17.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Miktex/font
 s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm
 /cmtt12.pfb>
-Output written on HW3.pdf (4 pages, 266951 bytes).
+Output written on HW3.pdf (4 pages, 264757 bytes).
 PDF statistics:
  96 PDF objects out of 1000 (max. 8388607)
  7 named destinations out of 1000 (max. 500000)

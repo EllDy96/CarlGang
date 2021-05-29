@@ -58,6 +58,8 @@ Our group worked on \textbf{Assignment 3}: Create an instrument based on FM synt
 
 \chapter{}
 \section{SuperCollider}
+
+
 \section{Interaction design}
 
 Modules and libraries used:
@@ -70,7 +72,15 @@ Modules and libraries used:
 	\item \href{https://github.com/colinbdclark/osc.js/}{ osc.js }
 \end{itemize}
 
-The synthesizer can be controlled through hand gestures captured from a webcam. For the hand pose recognition, we used a pre-trained ML model from ml5.js (a javascript framework for creative coding built on top of TensorFlow.js), which takes frame by frame the video stream and return the coordinates of 21 points of the hand (this process is GPU intensive, even though the model is lightweight, a system with a dedicated graphic card is advised for best results). From these 21 points (x and y coordinates) we compute 3 parameters:
+The synthesizer can be controlled through hand gestures captured from a webcam. For the hand pose recognition, we used a pre-trained ML model from ml5.js (a javascript framework for creative coding built on top of TensorFlow.js), which takes frame by frame the video stream and return the coordinates of 21 points of the hand (this process is GPU intensive, even though the model is lightweight, a system with a dedicated graphic card is advised for best results). 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{hand.png}
+\caption{21 hand points and control parameters}
+\end{figure}
+
+From these 21 points (x and y coordinates) we compute 3 parameters:
 \begin{itemize}
 	\item the centroid (green dot) with coordinates:
 	\[x_c = \cfrac{\sum_{i = 1}^{21}x_i}{21}\]
@@ -91,7 +101,13 @@ The user interface is hosted as a web page/application in an Express server, the
 \end{figure}
 
 
-The user interface, as we just said, is a web application in which we imported the libraries ml5.js and p5.js.  We set p5.js in Instance Mode in order to manage 4 different sketches which compose the main window. The bigger p5 sketch in the top left is the one visualizing the webcam, the 21 points of the hand, and the control parameters. The other three are a representation of the control parameters using psychedelic animations.
+The user interface, as we just said, is a web application in which we imported the libraries ml5.js and p5.js.  We set p5.js in Instance Mode in order to manage 4 different sketches which compose the main window. The bigger p5 sketch in the top left is the one visualizing the webcam, the 21 points of the hand, and the control parameters. The other three are a representation of the control parameters using psychedelic animations. At the bottom left we have a visualization for the hand orientation, at the top right for the x and y position of the centroid, and, at the bottom right, for the distance between the middle finger and the palm base.
+
+\chapter{}
+\section{How to use it?}
+In order to use the application, run the server using Node.js with the command \verb"node .\server.js". Then connect to the url \verb"localhost:55123" in a browser (it may take some second to load the ML model). Open the synth in SuperCollider and run all the code, it will start to listen for OSC messages through the port 57120. Enjoy!
+
+\section{Improvements roadmap}
 
 
 

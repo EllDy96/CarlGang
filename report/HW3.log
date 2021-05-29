@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.26)  29 MAY 2021 09:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.26)  29 MAY 2021 10:28
 entering extended mode
 **./HW3.tex
 (HW3.tex
@@ -355,7 +355,7 @@ LaTeX Info: Redefining \nameref on input line 8.
 \@outlinefile=\write3
 \openout3 = `HW3.out'.
 
-<logo_positivo.png, id=15, 227.6505pt x 167.4255pt>
+<logo_positivo.png, id=27, 227.6505pt x 167.4255pt>
 File: logo_positivo.png Graphic file (type png)
 <use logo_positivo.png>
 Package pdftex.def Info: logo_positivo.png  used on input line 49.
@@ -371,28 +371,44 @@ Package pdftex.def Info: logo_positivo.png  used on input line 49.
 l.57 \endabstract
                  {} [1]
 Chapter 1.
+<hand.png, id=51, 161.10187pt x 211.79124pt>
+File: hand.png Graphic file (type png)
+<use hand.png>
+Package pdftex.def Info: hand.png  used on input line 79.
+(pdftex.def)             Requested size: 128.88167pt x 169.43321pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.79 	\[
+l.89 	\[
         d = \sqrt{(x_{pb} - x_{mf})^2 + (y_{pb} - y_{mf})^2}\] [1
 
 ]
-<arch.png, id=47, 858.70813pt x 183.18437pt>
+<arch.png, id=60, 858.70813pt x 183.18437pt>
 File: arch.png Graphic file (type png)
 <use arch.png>
-Package pdftex.def Info: arch.png  used on input line 89.
+Package pdftex.def Info: arch.png  used on input line 99.
 (pdftex.def)             Requested size: 343.47717pt x 73.27245pt.
- [2 <./arch.png>] (HW3.aux)
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2 <./hand.png>] [3 <./arch.png>]
+Chapter 2.
+[4
+
+] (HW3.aux)
 Package rerunfilecheck Info: File `HW3.out' has not changed.
-(rerunfilecheck)             Checksum: 7803B876746B3B6E20A97F39F3ED84A2;301.
+(rerunfilecheck)             Checksum: C042F9169D8C064D05112118C3E1BC68;626.
  ) 
 Here is how much of TeX's memory you used:
- 9026 strings out of 479321
- 131161 string characters out of 2873173
- 438024 words of memory out of 3000000
- 26366 multiletter control sequences out of 15000+600000
+ 9041 strings out of 479321
+ 131318 string characters out of 2873173
+ 439027 words of memory out of 3000000
+ 26374 multiletter control sequences out of 15000+600000
  409812 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  81i,6n,88p,661b,409s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -405,9 +421,9 @@ onts/type1/public/amsfonts/cm/cmr12.pfb><C:/Miktex/fonts/type1/public/amsfonts/
 cm/cmr17.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Miktex/font
 s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm
 /cmtt12.pfb>
-Output written on HW3.pdf (4 pages, 264757 bytes).
+Output written on HW3.pdf (6 pages, 526248 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 7 named destinations out of 1000 (max. 500000)
- 35 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 120 PDF objects out of 1000 (max. 8388607)
+ 13 named destinations out of 1000 (max. 500000)
+ 64 words of extra memory for PDF output out of 10000 (max. 10000000)
 

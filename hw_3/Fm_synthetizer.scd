@@ -142,7 +142,6 @@ MIDIIn.connectAll;
 
 (
 //*var keys;
-// create a new array with all slots filled with nils
 //keys = Array.newClear(128);*/
 ~monoNote= Synth(\fm,[\amp,0]);
 

@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.26)  29 MAY 2021 19:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.25)  29 MAY 2021 23:32
 entering extended mode
 **./HW3.tex
 (HW3.tex
 LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18> xparse <2020-03-03>
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+L3 programming layer <2021-02-18>
+(C:\Program Files\MiKTeX\tex/latex/base\report.cls
 Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+(C:\Program Files\MiKTeX\tex/latex/base\size12.clo
 File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
 \c@part=\count179
@@ -22,101 +22,99 @@ File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+(C:\Program Files\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2020/08/01 v1.3d Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cf
-g
+(C:\Program Files\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+(C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen139
 \Gin@req@width=\dimen140
-) (C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
-Package: hyperref 2021-02-10 v7.00j Hypertext links for LaTeX
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+)
+(C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
+
+(C:\Program Files\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+(C:\Program Files\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.
-sty
+(C:\Program Files\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.st
-y
+(C:\Program Files\MiKTeX\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.st
-y
+(C:\Program Files\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinek
-eys.sty
+(C:\Program Files\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.st
-y
+(C:\Program Files\MiKTeX\tex/generic/pdfescape\pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+)
+(C:\Program Files\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro.
-sty
+(C:\Program Files\MiKTeX\tex/latex/letltxmacro\letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-) (C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+)
+(C:\Program Files\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+(C:\Program Files\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen141
 \Hy@linkcounter=\count188
 \Hy@pagecounter=\count189
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
-File: pd1enc.def 2021-02-10 v7.00j Hyperref: PDFDocEncoding definition (HO)
+
+(C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref-langpa
-tches.def
-File: hyperref-langpatches.def 2021-02-10 v7.00j Hyperref: patches for babel la
+(C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref-langpatches.def
+File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel la
 nguages
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+(C:\Program Files\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+(C:\Program Files\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count190
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
-File: puenc.def 2021-02-10 v7.00j Hyperref: PDF Unicode definition (HO)
+
+(C:\Program Files\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
@@ -129,18 +127,17 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
 \c@Hy@tempcnt=\count191
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+(C:\Program Files\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4804.
 \XeTeXLinkMargin=\dimen142
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Program Files\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.
-sty
+(C:\Program Files\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
@@ -157,7 +154,7 @@ Package hyperref Info: PDF/A mode OFF on input line 6105.
 LaTeX Info: Redefining \ref on input line 6145.
 LaTeX Info: Redefining \pageref on input line 6149.
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+(C:\Program Files\MiKTeX\tex/latex/base\atbegshi-ltx.sty
 Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
@@ -168,10 +165,10 @@ with kernel methods
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
-File: hpdftex.def 2021-02-10 v7.00j Hyperref driver for pdfTeX
+(C:\Program Files\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2021-02-27 v7.00k Hyperref driver for pdfTeX
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+(C:\Program Files\MiKTeX\tex/latex/base\atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
@@ -179,12 +176,10 @@ with kernel methods
 \Fld@listcount=\count196
 \c@bookmark@seq@number=\count197
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfile
-check.sty
+(C:\Program Files\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniqueco
-unter.sty
+(C:\Program Files\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -192,13 +187,13 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip49
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+(C:\Program Files\MiKTeX\tex/latex/base\textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.sty
+(C:\Program Files\MiKTeX\tex/latex/mathtools\mathtools.sty
 Package: mathtools 2021/04/12 v1.27 mathematical typesetting tools
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\calc.sty
+(C:\Program Files\MiKTeX\tex/latex/latex-tools\calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count198
 \calc@Bcount=\count199
@@ -211,27 +206,27 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count266
 \calc@Cskip=\skip52
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
+(C:\Program Files\MiKTeX\tex/latex/mathtools\mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip53
 
 For additional information on amsmath, use the `?' option.
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks18
 \ex@=\dimen147
 ))
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen148
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count267
@@ -288,9 +283,8 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
 \xmathstrut@box=\box49
 \xmathstrut@dim=\dimen163
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdft
-ex.def
-File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
+(C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count280
 \l__pdf_internal_box=\box50
 ) (HW3.aux)
@@ -315,8 +309,7 @@ LaTeX Font Info:    ... okay on input line 8.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mki
-i
+(C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count281
 \scratchdimen=\dimen164
@@ -329,11 +322,10 @@ i
 \MPnumerator=\count285
 \makeMPintoPDFobject=\count286
 \everyMPtoPDFconversion=\toks24
-)
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-ba
-se.sty
+) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
- (C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/grfext\grfext.sty
+
+(C:\Program Files\MiKTeX\tex/latex/grfext\grfext.sty
 Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -342,16 +334,19 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 504.
-)
+
+(C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
 Package hyperref Info: Link coloring OFF on input line 8.
- (C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+
+(C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+(C:\Program Files\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(C:\Users\Luca\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitl
-estring.sty
+(C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count287
@@ -359,79 +354,84 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 8.
 LaTeX Info: Redefining \pageref on input line 8.
 LaTeX Info: Redefining \nameref on input line 8.
- (HW3.out) (HW3.out)
+
+(HW3.out) (HW3.out)
 \@outlinefile=\write3
 \openout3 = `HW3.out'.
 
-<logo_positivo.png, id=3, 227.6505pt x 167.4255pt>
+<logo_positivo.png, id=11, 227.6505pt x 167.4255pt>
 File: logo_positivo.png Graphic file (type png)
 <use logo_positivo.png>
 Package pdftex.def Info: logo_positivo.png  used on input line 49.
 (pdftex.def)             Requested size: 195.0pt x 143.41852pt.
  [1
 
-{C:/Users/Luca/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./logo_positivo.
-png>]pdfTeX warning (ext4): destination with the same identifier (name{page.1})
- has been already used, duplicate ignored
+{C:/Users/david/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./logo_positivo
+.png>]pdfTeX warning (ext4): destination with the same identifier (name{page.1}
+) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.57 \endabstract
-                 {} [1]pdfTeX warning (ext4): destination with the same identif
-ier (name{page.1}) has been already used, duplicate ignored
+                 {} [1]
+Chapter 1.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.92 	\item\href
-                {https://ml5js.org/}{ ml5.js } [1]
-<hand.png, id=39, 161.10187pt x 211.79124pt>
+l.71 
+      [1
+
+] [2]
+Chapter 2.
+<hand.png, id=53, 161.10187pt x 211.79124pt>
 File: hand.png Graphic file (type png)
 <use hand.png>
-Package pdftex.def Info: hand.png  used on input line 100.
+Package pdftex.def Info: hand.png  used on input line 101.
 (pdftex.def)             Requested size: 128.88167pt x 169.43321pt.
- [2 <./hand.png>]
-<arch.png, id=49, 858.70813pt x 183.18437pt>
+[3
+
+ <./hand.png>]
+<arch.png, id=61, 858.70813pt x 183.18437pt>
 File: arch.png Graphic file (type png)
 <use arch.png>
-Package pdftex.def Info: arch.png  used on input line 120.
+Package pdftex.def Info: arch.png  used on input line 121.
 (pdftex.def)             Requested size: 343.47717pt x 73.27245pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 125--127
+Underfull \hbox (badness 10000) in paragraph at lines 126--128
 
  []
 
-[3 <./arch.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 131--134
+[4 <./arch.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 132--135
 
  []
 
-[4] (HW3.aux)
+[5] [6] (HW3.aux)
 Package rerunfilecheck Info: File `HW3.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 7110735FB70FED9C90C14CB70FCBAD1E;318.
  ) 
 Here is how much of TeX's memory you used:
- 9030 strings out of 479334
- 135611 string characters out of 2857559
- 438828 words of memory out of 3000000
- 26357 multiletter control sequences out of 15000+200000
- 410764 words of font info for 52 fonts, out of 3000000 for 9000
+ 9047 strings out of 479321
+ 133254 string characters out of 2866501
+ 441019 words of memory out of 3000000
+ 26373 multiletter control sequences out of 15000+600000
+ 410764 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 81i,6n,88p,1037b,397s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Luca\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
-200.pk> <C:\Users\Luca\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
-tcrm2074.pk><C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmbx12.pfb><C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmex10.pfb><C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Luca/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Luca/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Luca/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Luca/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Luca/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/User
-s/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-<C:/Users/Luca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmt
-t12.pfb>
-Output written on HW3.pdf (6 pages, 542332 bytes).
+ 81i,6n,88p,1049b,395s stack positions out of 5000i,500n,10000p,200000b,80000s
+ <C:\Users\david\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
+1200.pk> <C:\Users\david\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\tcrm2074.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pf
+b><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.
+pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Prog
+ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on HW3.pdf (8 pages, 547790 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 12 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 128 PDF objects out of 1000 (max. 8388607)
+ 19 named destinations out of 1000 (max. 500000)
+ 32 words of extra memory for PDF output out of 10000 (max. 10000000)
 

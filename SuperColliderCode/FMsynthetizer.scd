@@ -31,7 +31,7 @@
 (
  SynthDef(\FMsynth,{
 	arg freq=440, amp=0.5, modulationRatio=2, carrierRatio=1, index=1,
-	atk=1,rel=5,cut_off=20000, feedback= 0.2, indexScale=0.2, curveAtk=3.5, curveRel=(-2),
+	atk=1,rel=5,cut_off=20000, feedback= 0.2, curveAtk=3.5, curveRel=(-2),
 	revVolume=0.5;
 
 	var carrier, modulator1, env, indexEnv, hpf_carrier, revEnv, lpf_hpf_carrier,snd, hpf_reverb, signalOut;
@@ -46,6 +46,7 @@
 	lpf_hpf_carrier= LPF.ar(hpf_carrier,8000,1);
 
 	revEnv = EnvGen.kr(Env.adsr(1,2,3,rel*0.5));
+    //Adding a high-pass filter to clean the reverb sound
 	hpf_reverb= HPF.ar(FreeVerb.ar(in:lpf_hpf_carrier*revEnv,mix:0.7,room:0.5, damp:0.5, mul:revVolume),250);
 
     snd = Mix.ar([lpf_hpf_carrier,hpf_reverb]);

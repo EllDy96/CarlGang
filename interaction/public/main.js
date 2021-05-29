@@ -88,6 +88,7 @@ hadnposeSkecth.myP5.paramMaxHeight = stream_height;
 //Window resize event listening
 window.addEventListener('resize', resizeAll)
 
+//Resize all the canvases when windows size changes
 function resizeAll() {
     w = window.innerWidth;
     h = window.innerHeight;
@@ -133,7 +134,7 @@ function resizeAll() {
 }
 
 
-
+//Pass the control parameters to the visualization  canvases
 export default function onChangeData(centroidData, palmMiddleFingerData, palmMiddleSlopeData) {
     tilt.myP5.parameter = palmMiddleSlopeData;
     sphere.myP5.parameter = centroidData;

@@ -2,32 +2,37 @@ import onChangeData from "./main.js"
 
 export default class HandposeSketch {
   constructor(canvasWidth, canvasHeight, videoWidth, videoHeight, div) {
+    //Hanpose model
     let handpose;
     let video;
     let predictions = [];
 
+    //Control parameters
     let centroid = [];
     let palmMiddleFinger;
     let palmMiddleSlope;
     let palmBaseCoord = [];
     let middleFingerCoord = [];
 
+    //Server
     let socket;
     let data;
 
     this.myP5 = new p5(function (p5) {
+      //Webcam max supported resolution
       p5.paramMaxWidth = 0;
       p5.paramMaxHeight = 0;
 
       p5.setup = function () {
+        //Server connection
         socket = io.connect('http://localhost:55123')
 
-
+        //Canvas creation and webcam stream capture
         p5.createCanvas(videoWidth, videoHeight);
         video = p5.createCapture(p5.VIDEO);
         video.size(videoWidth, videoHeight);
 
-
+        //Model init
         handpose = ml5.handpose(video, p5.modelReady);
 
 
@@ -47,16 +52,18 @@ export default class HandposeSketch {
       }
 
       p5.draw = function () {
+        //Drawing the webcam feed
         p5.translate(canvasWidth, 0);
         p5.scale(-canvasWidth / videoWidth, canvasHeight / videoHeight);
         p5.image(video, 0, 0, p5.width, p5.height);
 
 
-        // We can call both functions to draw all keypoints and the skeletons
+        // Drawing all keypoints and the skeletons
         p5.drawKeypoints();
       }
 
       p5.resetWindowSize = function (w, h) {
+        //Reset the canvas size
         canvasWidth = w;
         canvasHeight = h;
         console.log(canvasWidth, canvasHeight)
@@ -64,7 +71,7 @@ export default class HandposeSketch {
         //video.size(p5.width, p5.height);
       }
 
-      // A function to draw ellipses over the detected keypoints
+      // Draw hand skeleton and control parameters
       p5.drawKeypoints = function () {
 
         for (let i = 0; i < predictions.length; i += 1) {
@@ -94,6 +101,7 @@ export default class HandposeSketch {
         console.log("Model ready!");
       }
 
+      //Computation of all the parameters
       p5.computeCentroidAndInertia = function () {
         centroid = [0, 0];
         palmMiddleFinger = 0;
@@ -118,6 +126,7 @@ export default class HandposeSketch {
             palmMiddleFinger = Math.sqrt(Math.pow(palmBaseCoord[0] - middleFingerCoord[0], 2) +
               Math.pow(palmBaseCoord[1] - middleFingerCoord[1], 2));
 
+            //Slope 
             palmMiddleSlope = Math.abs(Math.atan((middleFingerCoord[1] - palmBaseCoord[1]) / (middleFingerCoord[0] - palmBaseCoord[0])) * 180 / 3.14159);
           }
 

@@ -114,8 +114,8 @@ OSCdef('OSCreceiver',
 
 		x = msg[1]; // x del baricentro -> feedback
 		y = msg[2];// y del baricentro -> index
-		z= msg[3];// palm distance -> indexScalex
-		k= msg[4];// palm slope -> panning
+		z = msg[3];// palm distance -> indexScalex
+		k = msg[4];// palm slope -> panning
 
 		postln("x: "+x+" - y: "+y);
 		x_map= LinLin.ar(y,0,1,0, 0.5);// mapoping the feedback

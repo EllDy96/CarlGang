@@ -63,7 +63,7 @@ Our group worked on \textbf{Assignment 3}: Create an instrument based on FM synt
 
 \subsection*{MIDI control} 
 We defined a global variable (\emph{~monoNote}) as an instance of the Synthesiser we defined, in order to easily have the access to the parameters of the synth and change them immediately.
-MIDI controls are composed by a \emph{noteONFunc} that receives the velocity, the note, the MIDI channel and the MIDI port and set the frequency and the amplitude. It is also defined a \emph{noteOffFunc} that receives the same parameters of the noteOnFunc and set the amplitude to zero.
+MIDI controls are composed by a \emph{noteOnFunc} that receives the velocity, the note, the MIDI channel and the MIDI port and set the frequency and the amplitude. It is also defined a \emph{noteOffFunc} that receives the same parameters of the noteOnFunc and set the amplitude to zero.
 
 \subsection*{OSC messages}
 The OSC communication is set to the localhost (id "127.0.0.1) at port 57120. The OSC message is composed by 4 parameters, respectively: 

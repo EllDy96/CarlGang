@@ -1,0 +1,24 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{textcomp}
+
+
+\begin{document}
+
+\chapter{}
+
+Going into more depth on the animations implementation, we used as a reference the examples on the \url{https://p5js.org}
+website and a number of Youtube tutorials, in order to properly manage all the instructions in the code.\\
+\\Beginning from the \textbf{"Squared Rose"} animation, we wanted to create an easily interpretable as visually impactful effect describing the variation of (...). \\The main characteristics of the code itself can be riassumed in the following choices:\begin{itemize}
+\item mapping the behaviour of the changing colors with $sin()$ and $cos()$ functions, creating pleasant and smoothing transitions
+\item introduce a constant rotation of the figure using the \texttt{rotate} function, and considering as argument \textit{frameCount}, which contains the number of frames that have been displayed since the program started. You can reduce the rotation speed dividing \textit{frameCount} by a proper value. Without this rotation we only have a series of concentric squares, whose relative positions don't change over time.
+\end{itemize}
+About the \textbf{"Sun Sphere"} animation instead, the astonishing effect given by the cohesion between the central sphere (created with a for cycle of multiple ellipses) and the colorful rays (created with a for cycle of multiple triangles) is essentially possible thanks to the double rotation implemented, through the functions \texttt{rotateX} and \texttt{rotateY}.
+The behaviour of the colors is similar to the previous animation, except for the increased velocity in the transitions. This "2 in 1 animation canvas" is used to describe the variations of (...).\\
+\\Talking about the \textbf{"Double Square"} animation, we decided to implement an immediately readable effect, describing the variation of (...). The 2 squares gradually decrease \& increase their dimension following the hand orientation, as we'll show in the demo. This effect is given mapping the parameters of the \texttt{rect} functions with the changing positions of the hand over time. In particular, two variables $r1$ and $r2$ (one variable per square) are used for controlling the width and height of the squares in the \texttt{rect} functions. The $r2$ variable depends from $r1$ (actually $r1$ is related to the square on the left) and $r1$ maps the values representing the hand orientation with the width and height of the square: decreasing the width will consequently decrease the height of the first square. In addition, $r1$ and $r2$ are also used for creating a vanish effect while a square is decreasing its size, as arguments of the the two \texttt{fill} functions in the code.
+
+
+
+\end{document}

@@ -53,11 +53,10 @@
 
 
 \abstract{}
-Our group worked on \textbf{Assignment 3}: Create an instrument based on FM synthesis and an interface for controlling it. The link containing the source code can be found on GitHub at: \url{https://github.com/EllDy96/CarlGang/tree/Homework3}
+Our group worked on \textbf{Assignment 3}: Create an instrument based on FM synthesis and an interface for controlling it. In order to use the application, run the server using Node.js with the command \verb"node .\server.js". Then connect to the url \verb"localhost:55123" in a browser (it may take some second to load the ML model). Open the synth in SuperCollider and run all the code, it will start to listen for OSC messages through the port 57120. The link containing the source code can be found on GitHub at: \url{https://github.com/EllDy96/CarlGang/tree/Homework3}. Enjoy!
 \endabstract{}
 
-\chapter{}
-\section{SuperCollider}
+\section*{SuperCollider}
 
 \subsection*{Synthesizer definition}
 
@@ -82,7 +81,7 @@ palm slope $\rightarrow$ panning\\
 \end{center}
 
 
-\section{Interaction design}
+\section*{Interaction design}
 
 Modules and libraries used:
 \begin{itemize}
@@ -132,14 +131,6 @@ website and a number of Youtube tutorials, in order to properly manage all the i
 About the \textbf{"Sun Sphere"} animation instead, the astonishing effect given by the cohesion between the central sphere (created with a for cycle of multiple ellipses) and the colorful rays (created with a for cycle of multiple triangles) is essentially possible thanks to the double rotation implemented, through the functions \texttt{rotateX} and \texttt{rotateY}.
 The behaviour of the colors is similar to the previous animation, except for the increased velocity in the transitions. This "2 in 1 animation canvas" is used to describe the variations of (...).\\
 \\Talking about the \textbf{"Double Square"} animation, we decided to implement an immediately readable effect, describing the variation of (...). The 2 squares gradually decrease \& increase their dimension following the hand orientation, as we'll show in the demo. This effect is given mapping the parameters of the \texttt{rect} functions with the changing positions of the hand over time. In particular, two variables $r1$ and $r2$ (one variable per square) are used for controlling the width and height of the squares in the \texttt{rect} functions. The $r2$ variable depends from $r1$ (actually $r1$ is related to the square on the left) and $r1$ maps the values representing the hand orientation with the width and height of the square: decreasing the width will consequently decrease the height of the first square. In addition, $r1$ and $r2$ are also used for creating a vanish effect while a square is decreasing its size, as arguments of the the two \texttt{fill} functions in the code.
-
-\chapter{}
-\section{How to use it?}
-In order to use the application, run the server using Node.js with the command \verb"node .\server.js". Then connect to the url \verb"localhost:55123" in a browser (it may take some second to load the ML model). Open the synth in SuperCollider and run all the code, it will start to listen for OSC messages through the port 57120. Enjoy!
-
-\section{Improvements roadmap}
-
-
 
 
 \end{document}

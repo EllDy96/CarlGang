@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.26)  29 MAY 2021 14:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.26)  29 MAY 2021 16:31
 entering extended mode
 **./HW3.tex
 (HW3.tex
@@ -355,7 +355,7 @@ LaTeX Info: Redefining \nameref on input line 8.
 \@outlinefile=\write3
 \openout3 = `HW3.out'.
 
-<logo_positivo.png, id=27, 227.6505pt x 167.4255pt>
+<logo_positivo.png, id=7, 227.6505pt x 167.4255pt>
 File: logo_positivo.png Graphic file (type png)
 <use logo_positivo.png>
 Package pdftex.def Info: logo_positivo.png  used on input line 49.
@@ -369,65 +369,66 @@ Package pdftex.def Info: logo_positivo.png  used on input line 49.
 <to be read again> 
                    \relax 
 l.57 \endabstract
-                 {} [1]
-Chapter 1.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
+                 {} [1]pdfTeX warning (ext4): destination with the same identif
+ier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.81 p
-      alm slope $\rightarrow$ panning\\ [1
-
-]
-<hand.png, id=61, 161.10187pt x 211.79124pt>
+l.92 	\item\href
+                {https://ml5js.org/}{ ml5.js } [1]
+<hand.png, id=43, 161.10187pt x 211.79124pt>
 File: hand.png Graphic file (type png)
 <use hand.png>
-Package pdftex.def Info: hand.png  used on input line 101.
+Package pdftex.def Info: hand.png  used on input line 100.
 (pdftex.def)             Requested size: 128.88167pt x 169.43321pt.
  [2 <./hand.png>]
-<arch.png, id=68, 858.70813pt x 183.18437pt>
+<arch.png, id=53, 858.70813pt x 183.18437pt>
 File: arch.png Graphic file (type png)
 <use arch.png>
-Package pdftex.def Info: arch.png  used on input line 121.
+Package pdftex.def Info: arch.png  used on input line 120.
 (pdftex.def)             Requested size: 343.47717pt x 73.27245pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--128
+Underfull \hbox (badness 10000) in paragraph at lines 125--127
 
  []
 
 [3 <./arch.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 132--135
+Underfull \hbox (badness 10000) in paragraph at lines 131--134
 
  []
 
-[4] [5]
-Chapter 2.
-[6
+[4] (HW3.aux)
 
-] (HW3.aux)
-Package rerunfilecheck Info: File `HW3.out' has not changed.
-(rerunfilecheck)             Checksum: C042F9169D8C064D05112118C3E1BC68;626.
+Package rerunfilecheck Warning: File `HW3.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `HW3.out':
+(rerunfilecheck)             Before: 1E931763DD7416171BBD7CECCFB785BB;138
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 9050 strings out of 479321
- 131414 string characters out of 2873173
- 441027 words of memory out of 3000000
- 26377 multiletter control sequences out of 15000+600000
+ 9037 strings out of 479321
+ 131286 string characters out of 2873173
+ 439021 words of memory out of 3000000
+ 26369 multiletter control sequences out of 15000+600000
  410764 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 81i,6n,88p,1037b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
- <C:\Users\il_gi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
-1200.pk> <C:\Users\il_gi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\tcrm2074.pk><C:/Miktex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Miktex/f
-onts/type1/public/amsfonts/cm/cmex10.pfb><C:/Miktex/fonts/type1/public/amsfonts
-/cm/cmmi12.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Miktex/f
-onts/type1/public/amsfonts/cm/cmr12.pfb><C:/Miktex/fonts/type1/public/amsfonts/
-cm/cmr17.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Miktex/font
-s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm
-/cmti12.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on HW3.pdf (8 pages, 547063 bytes).
+ 81i,6n,88p,1037b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{section.0.1} has been referenced but does not exi
+st, replaced by a fixed one
+
+ <C:\Users\il_gi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm12
+00.pk> <C:\Users\il_gi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+tcrm2074.pk><C:/Miktex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Miktex/fon
+ts/type1/public/amsfonts/cm/cmex10.pfb><C:/Miktex/fonts/type1/public/amsfonts/c
+m/cmmi12.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Miktex/fon
+ts/type1/public/amsfonts/cm/cmr12.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm
+/cmr17.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Miktex/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm/c
+mti12.pfb><C:/Miktex/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on HW3.pdf (6 pages, 542604 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
- 18 named destinations out of 1000 (max. 500000)
- 64 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 110 PDF objects out of 1000 (max. 8388607)
+ 13 named destinations out of 1000 (max. 500000)
+ 24 words of extra memory for PDF output out of 10000 (max. 10000000)
 

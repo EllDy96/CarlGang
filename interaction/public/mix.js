@@ -31,7 +31,7 @@ export default class Mix {
 
           p5.beginShape()
           for (var j = 0; j < 360; j += 90) {
-            var rad = (i) * (1 + p5.parameter / 50) // aumenta raggio dei cerchi
+            var rad = (i) * (1 + p5.parameter / 150) // aumenta raggio dei cerchi
             var x = rad * p5.cos(j)
             var y = rad * p5.sin(j)
             var z = p5.sin(p5.frameCount) + p5.parameter / 2 //*A modifico ampiezza dell'oscillazione

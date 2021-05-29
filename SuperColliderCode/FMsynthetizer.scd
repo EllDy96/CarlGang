@@ -118,7 +118,7 @@ OSCdef('OSCreceiver',
 		k = msg[4];// palm slope -> panning
 
 		postln("x: "+x+" - y: "+y);
-		x_map= LinLin.ar(y,0,1,0, 0.5);// mapoping the feedback
+		x_map= LinLin.ar(y,0,1,0, 0.5);// mapping the feedback
 		y_map= LinLin.ar(y,0,1,0.5,20);  // mapping of the indexScale from 0.5 to 10
 		z_map= LinLin.ar(z,0,1,1,20);     //  mapping of the index from 1 to 20
 		k_map= LinLin.ar(k, 0, 1, 150, 15000);// mapping of the lpf from 150 to 15000

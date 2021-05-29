@@ -11,6 +11,8 @@ let handposeCanvasDiv = document.getElementById("handposeDiv")
 let modCanvasDiv = document.getElementById("modDiv")
 let mixCanvasDiv = document.getElementById("fxDiv")
 let tiltCanvasDiv = document.getElementById("tiltDiv")
+let firstColumn = document.getElementsByClassName("first_col")
+let secondColumn = document.getElementsByClassName("second_col")
 
 //Check webcam resolution
 let constraints = {
@@ -59,6 +61,11 @@ mixCanvasDiv.style.height = mixCanvasHeight
 tiltCanvasDiv.style.width = tiltCanvasWidth
 tiltCanvasDiv.style.height = tiltCanvasHeight
 
+let firstColStyle = handposeCanvasHeight + "px " + tiltCanvasHeight + "px"
+let secondColStyle = modCanvasHeight + "px " + mixCanvasHeight + "px"
+firstColumn[0].style.gridTemplateRows = firstColStyle
+secondColumn[0].style.gridTemplateRows = secondColStyle
+
 
 
 
@@ -67,6 +74,10 @@ let hadnposeSkecth = new HandposeSketch(handposeCanvasWidth, handposeCanvasHeigh
 let sphere = new Sphere(modCanvasWidth, modCanvasHeight, document.getElementById("modDiv"));
 let mix = new Mix(mixCanvasWidth, mixCanvasHeight, document.getElementById("fxDiv"));
 let tilt = new Tilt(tiltCanvasWidth, tiltCanvasHeight, document.getElementById("tiltDiv"));
+
+let videoCanvas = document.getElementById("defaultCanvas0")
+//videoCanvas.style.width = handposeCanvasWidth
+//videoCanvas.style.height = handposeCanvasWidth / aspectRatio
 
 sphere.myP5.paramMaxWidth = stream_width;
 sphere.myP5.paramMaxHeight = stream_height;
@@ -98,6 +109,9 @@ function resizeAll() {
     handposeCanvasDiv.style.width = handposeCanvasWidth;
     handposeCanvasDiv.style.height = handposeCanvasHeight;
 
+    //videoCanvas.style.width = handposeCanvasWidth
+    //videoCanvas.style.height = handposeCanvasWidth / aspectRatio
+
     modCanvasDiv.style.width = modCanvasWidth;
     modCanvasDiv.style.height = modCanvasHeight;
 
@@ -106,6 +120,11 @@ function resizeAll() {
 
     tiltCanvasDiv.style.width = tiltCanvasWidth
     tiltCanvasDiv.style.height = tiltCanvasHeight
+
+    firstColStyle = handposeCanvasHeight + "px " + tiltCanvasHeight + "px"
+    secondColStyle = modCanvasHeight + "px " + mixCanvasHeight + "px"
+    firstColumn[0].style.gridTemplateRows = firstColStyle
+    secondColumn[0].style.gridTemplateRows = secondColStyle
 
     hadnposeSkecth.myP5.resetWindowSize(handposeCanvasWidth, handposeCanvasHeight)
     sphere.myP5.resetWindowSize(modCanvasWidth, modCanvasHeight)

@@ -22,12 +22,12 @@ export default class Tilt {
                 let r2 = p5.height - r1;
 
 
-                p5.fill(255, 100, 50, r1);
+                p5.fill(190, 252, 255);
 
 
                 p5.rect(p5.width / 2 + r1 / 2, p5.height / 2, r1, r1);
 
-                p5.fill(37, 55, 152, r2);
+                p5.fill(255, 130, 183);
                 p5.rect(p5.width / 2 - r2 / 2, p5.height / 2, r2, r2);
             }
 

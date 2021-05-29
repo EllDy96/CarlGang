@@ -92,7 +92,7 @@ From these 21 points (x and y coordinates) we compute 3 parameters:
 \end{itemize}  
 
  
-The user interface is hosted as a web page/application in an Express server, the connection is set up through the framework Socket.io. All the control parameter mentioned above are computed in the client and then sent to the server. From the server, the parameters are written in OSC messages and forwarded to SuperCollider. This last past is handled through the library osc.js, which can generate OSC messages from javascript objects and establish a connection with a receiver (i.e., SuperCollider through an UPD connection). The OSC message has only one path “/params” in which are contained all the parameters as floats.
+The user interface is hosted as a web page/application in an Express server, the connection is set up through the framework Socket.io. All the control parameter mentioned above are computed in the client and then sent to the server. From the server, the parameters are written in OSC messages and forwarded to SuperCollider. This last past is handled through the library osc.js, which can generate OSC messages from javascript objects and establish a connection with a receiver (i.e., SuperCollider through an UDP connection). The OSC message has only one path “/params” in which are contained all the parameters as floats.
 
 \begin{figure}[h]
 \centering
@@ -101,7 +101,7 @@ The user interface is hosted as a web page/application in an Express server, the
 \end{figure}
 
 
-The user interface, as we just said, is a web application in which we imported the libraries ml5.js and p5.js.  We set p5.js in Instance Mode in order to manage 4 different sketches which compose the main window. The bigger p5 sketch in the top left is the one visualizing the webcam, the 21 points of the hand, and the control parameters. The other three are a representation of the control parameters using psychedelic animations. At the bottom left we have a visualization for the hand orientation, at the top right for the x and y position of the centroid, and, at the bottom right, for the distance between the middle finger and the palm base.
+The user interface, as we just said, is a web application in which we imported the libraries ml5.js and p5.js.  We set p5.js in Instance Mode in order to manage 4 different sketches which compose the main window. The bigger p5 sketch at the top left is the one visualizing the webcam, the 21 points of the hand and the control parameters. The other three are a representation of the control parameters using psychedelic animations. At the bottom left we have a visualization for the hand orientation, at the top right for the x and y position of the centroid, and finally at the bottom right, for the distance between the middle finger and the palm base.
 
 \chapter{}
 \section{How to use it?}

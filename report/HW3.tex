@@ -83,15 +83,7 @@ palm slope $\rightarrow$ panning\\
 
 \section*{Interaction design}
 
-Modules and libraries used:
-\begin{itemize}
-	\item \href{https://nodejs.org/en/}{ Node.js }
-	\item \href{https://socket.io/}{ Socket.io }
-	\item \href{https://expressjs.com/}{ Express }
-	\item \href{https://p5js.org/}{ p5.js }
-	\item\href{https://ml5js.org/}{ ml5.js }
-	\item \href{https://github.com/colinbdclark/osc.js/}{ osc.js }
-\end{itemize}
+Modules and libraries used: \href{https://nodejs.org/en/}{Node.js}, \href{https://socket.io/}{Socket.io}, \href{https://expressjs.com/}{Express}, \href{https://p5js.org/}{p5.js}, \href{https://ml5js.org/}{ml5.js}, \href{https://github.com/colinbdclark/osc.js/}{osc.js}.
 
 The synthesizer can be controlled through hand gestures captured from a webcam. For the hand pose recognition, we used a pre-trained ML model from ml5.js (a javascript framework for creative coding built on top of TensorFlow.js), which takes frame by frame the video stream and return the coordinates of 21 points of the hand (this process is GPU intensive, even though the model is lightweight, a system with a dedicated graphic card is advised for best results). 
 
@@ -124,13 +116,13 @@ The user interface is hosted as a web page/application in an Express server, the
 
 The user interface, as we just said, is a web application in which we imported the libraries ml5.js and p5.js.  We set p5.js in Instance Mode in order to manage 4 different sketches which compose the main window. The bigger p5 sketch at the top left is the one visualizing the webcam, the 21 points of the hand and the control parameters. The other three are a representation of the control parameters using psychedelic animations. At the bottom left we have a visualization for the hand orientation, at the top right for the x and y position of the centroid, and finally at the bottom right, for the distance between the middle finger and the palm base. Going into more depth on the animations implementation, we used as a reference the examples on the \url{https://p5js.org}
 website and a number of Youtube tutorials, in order to properly manage all the instructions in the code.\\
-\\Beginning from the \textbf{"Squared Rose"} animation, we wanted to create an easily interpretable as visually impactful effect describing the variation of (...). \\The main characteristics of the code itself can be riassumed in the following choices:\begin{itemize}
+\\Beginning from the \textbf{"Squared Rose"} animation, we wanted to create an easily interpretable as visually impactful effect describing the variation of LPF. \\The main characteristics of the code itself can be riassumed in the following choices:\begin{itemize}
 \item mapping the behaviour of the changing colors with $sin()$ and $cos()$ functions, creating pleasant and smoothing transitions
 \item introduce a constant rotation of the figure using the \texttt{rotate} function, and considering as argument \textit{frameCount}, which contains the number of frames that have been displayed since the program started. You can reduce the rotation speed dividing \textit{frameCount} by a proper value. Without this rotation we only have a series of concentric squares, whose relative positions don't change over time.
 \end{itemize}
 About the \textbf{"Sun Sphere"} animation instead, the astonishing effect given by the cohesion between the central sphere (created with a for cycle of multiple ellipses) and the colorful rays (created with a for cycle of multiple triangles) is essentially possible thanks to the double rotation implemented, through the functions \texttt{rotateX} and \texttt{rotateY}.
-The behaviour of the colors is similar to the previous animation, except for the increased velocity in the transitions. This "2 in 1 animation canvas" is used to describe the variations of (...).\\
-\\Talking about the \textbf{"Double Square"} animation, we decided to implement an immediately readable effect, describing the variation of (...). The 2 squares gradually decrease \& increase their dimension following the hand orientation, as we'll show in the demo. This effect is given mapping the parameters of the \texttt{rect} functions with the changing positions of the hand over time. In particular, two variables $r1$ and $r2$ (one variable per square) are used for controlling the width and height of the squares in the \texttt{rect} functions. The $r2$ variable depends from $r1$ (actually $r1$ is related to the square on the left) and $r1$ maps the values representing the hand orientation with the width and height of the square: decreasing the width will consequently decrease the height of the first square. In addition, $r1$ and $r2$ are also used for creating a vanish effect while a square is decreasing its size, as arguments of the the two \texttt{fill} functions in the code.
+The behaviour of the colors is similar to the previous animation, except for the increased velocity in the transitions. This "2 in 1 animation canvas" is used to describe the variations of feedback and modulation amplitude.\\
+\\Talking about the \textbf{"Double Square"} animation, we decided to implement an immediately readable effect, describing the variation of the reverb volume. The 2 squares gradually decrease \& increase their dimension following the hand orientation, as we'll show in the demo. This effect is given mapping the parameters of the \texttt{rect} functions with the changing positions of the hand over time. In particular, two variables $r1$ and $r2$ (one variable per square) are used for controlling the width and height of the squares in the \texttt{rect} functions. The $r2$ variable depends from $r1$ (actually $r1$ is related to the square on the left) and $r1$ maps the values representing the hand orientation with the width and height of the square: decreasing the width will consequently decrease the height of the first square. In addition, $r1$ and $r2$ are also used for creating a vanish effect while a square is decreasing its size, as arguments of the the two \texttt{fill} functions in the code.
 
 
 \end{document}

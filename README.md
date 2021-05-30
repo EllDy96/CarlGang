@@ -4,27 +4,8 @@ Implementation of a FM synthesizer, designed in **SUPERCOLLIDER**, controlled by
 
 ### What is a FM synthesizer?
 
-## SUPERCOLLIDER Implementation
-For the real implementation we started from its block diagram: 
+## SuperCollider Implementation
 
-![Flanger block diagram](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/report%20HW2/db_flanger.png)
-
-As we can see from the block diagram, we have two gains, gFB, which is the
-feedback gain, and gFF , the gain related to the output of the delay line. For
-ensure the filter's stability we set the value of the feedback gain less then
-one. If gFB < 1, the delayed copies of the sound will gradually decay, where
-a gain of 1 or more means they will grow indefinitely and the filter become
-unstable. So, the input/output relation for the 
-anger with feedback can be
-expressed in the time domain as:
-
-<p align= center> y[n] = x[n]+ gFFd[n]
-
-and the output of the Delay line as:
- 
-<p align= center>  d[n] = x[n - M[n]] + gFBd[n - M[n]] 
-
-M[n] expresses the delay length over a sample n.
 
 ### Plug-in parameters
 These are the parameters we chose for our Flanger plugin that apper in the GUI and could be modify by the user:

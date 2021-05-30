@@ -9,8 +9,10 @@ The implementation is divided in two main frames: **SuperCollider** that manages
 ### SuperCollider
 #### FM Synth
 (davide)
+
 #### MIDI
-The synth *fm* is instantiated as a global variable (~monoNote) with amplitude equal to zero. The *noteOnFunc* exploits the *set* function and set the frequency, the amplitude (according to the normalized velocity) and the gate in order to trigger the attack of the envelop. The *noteOffFunc* uses the same *set* function and set the gate equal to zero in order to trigger the release of the synth. Therefore, using a MIDI keyboard 
+The synth *fm* is instantiated as a global variable (~monoNote) with amplitude equal to zero. The *noteOnFunc* exploits the *set* function and set the frequency, the amplitude (according to the normalized velocity) and the gate in order to trigger the attack of the envelop. The *noteOffFunc* uses the same *set* function and set the gate equal to zero in order to trigger the release of the synth. Therefore, using a MIDI keyboard you can control the carrier's frequency and amplitude as well as the duration of the sound produced.
+
 #### OSC
 
 

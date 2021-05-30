@@ -18,7 +18,7 @@ The synth *fm* is instantiated as a global variable (~monoNote) with amplitude e
 #### Hand Interaction
 #### Animations
 
-##How to use it
+## How to use it
 In order to use the application, run the server using Node.js with the command node .\server.js from terminal. Then
 connect to the url localhost:55123 in a browser (it may take some seconds to load the ML model). Open the synth in SuperCollider and run all the code. Now you can enjoy the experience from your localhost page!
 

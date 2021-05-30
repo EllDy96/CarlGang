@@ -31,7 +31,7 @@
 (
  SynthDef(\FMsynth,{
 	arg freq=440, amp=0.5, modulationRatio=2, carrierRatio=1, index=1,
-	atk=1,rel=5,cut_off=20000, feedback= 0.2, curveAtk=3.5, curveRel=(-2),
+	atk=1,rel=5,cut_off=20000, feedback= 0.2, curveAtk=3.5, curveRel=(-4),
 	revVolume=0.5;
 
 	var carrier, modulator1, env, indexEnv, hpf_carrier, revEnv, lpf_hpf_carrier,snd, hpf_reverb, signalOut;
@@ -50,7 +50,7 @@
 	hpf_reverb= HPF.ar(FreeVerb.ar(in:lpf_hpf_carrier*revEnv,mix:0.7,room:0.5, damp:0.5, mul:revVolume),250);
 
     snd = Mix.ar([lpf_hpf_carrier,hpf_reverb]);
-    signalOut=LPF.ar(snd, cut_off, mul:2);
+    signalOut=LPF.ar(snd, cut_off);
 	Out.ar([0,1],signalOut/4);
  }).add;
 )
@@ -114,7 +114,7 @@ OSCdef('OSCreceiver',
 		x_map= LinLin.ar(x,0,1,0.01,0.3);// mapping the feedback
         y_map= LinLin.ar(y,0,1,0.1,1.5); // mapping of the index (increase the modulation amplitude)
         z_map= LinLin.ar(z, 0, 1, 20,2000);// mapping of the cut off lpf
-		k_map= LinLin.ar(k,0,1,0,0.6); //  mapping of the Reverb amount
+		k_map= LinLin.ar(k,0,1,0,0.7); //  mapping of the Reverb amount
 
 		~monoNote.set(\feedback,x_map,\index,y_map,\cut_off, z_map,\revVolume, k_map);
 
@@ -135,7 +135,7 @@ OSCdef('OSCreceiver',
 //Compile one of this to try the synth with different presets
 
 // modulation ratio 2:1
-~monoNote.set(\feedback,0.3,\curveRel,-3,\rel,2\modulationRatio,2,\index,0.5,\cut_off, 3000,\revVolume, 0.3);
+~monoNote.set(\feedback,0.3,\curveRel,-3,\rel,2,\modulationRatio,2,\index,0.5,\cut_off, 3000,\revVolume, 0.);
 
 // high index and low modulationRatio, high feedback
 ~monoNote.set(\feedback,0.8, \curveRel,-2,\rel,3,\index,2,\modulationRatio,0.5,\revVolume, 0.5,);

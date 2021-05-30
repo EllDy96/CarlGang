@@ -1,4 +1,4 @@
-# Implementation of a Flanger plug-in
+# FM Synthesizer controlled by hand movement
 ## Introduction
 Implementation of a Flanger filter with feedback designed in **JUCE** using **Projucer** for the audio-processor and the GUI implementation. 
 ### What is a flanger with feedback?

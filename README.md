@@ -1,135 +1,42 @@
-# Implementation of a Flanger plug-in
+# FM Synthesizer controlled by hand movement
 ## Introduction
-Implementation of a Flanger filter with feedback designed in **JUCE** using **Projucer** for the audio-processor and the GUI implementation. 
-### What is a flanger with feedback?
-The Flanger is a Delay based audio effect. It is a linear audio filter based on the Delay effect but with something more. Its typical sound is produced by changing the delay length over time, creating a motion of regularly spaced
-notches in the frequency response of the filter. To create this motion we modulated the delay-time with a low-frequency oscillator (LFO) using three possible waveforms: sine, triangle and sawtooth. 
-One important constraint to achieve a Flanger effect is to set a short delay length (1-10 ms), to avoid the perception of multiple instruments as in the chorus effect.
-### What does the feedback do?
-Adding a feedback control, the output of the delay line is routed
-back to its input. It will result in many successive copies of the input signal
-spaced several milliseconds apart and gradually decaying over time producing
-an harmonic enrichment and a colouration of the sound effect! This feature
-can be controlled by the user with the feedback gain knob. However, since
-the delay times in the Flanger are below the threshold of echo perception
-(roughly 50-70 ms), these copies are not heard as independent sounds as
-with the feedback of a pure delay effect.
+Implementation of a FM synthesizer, designed in **SUPERCOLLIDER**, controlled by tracking hand movements and visualization through geometric and colorfull animations, using **P5**. 
 
-## Theoretical Implementation
-For the real implementation we started from its block diagram: 
+### What is a FM Synthesizer?
+It is a synthesizer that exploits **Frequency Modulation**, where the carrier oscillator is modulated in frequency with modulators. **FM Synthesis** can create both harmonic and inharmonic sounds, depending on the ratio between the carrier frequency and the modulator frequency. If the modulators frequencies are multiple integers of the carrier frequency the sound will be harmonic, instead if the ratio is a non-integer fraction the sound will be inharmonic. In a FM synthetiser can be used a lot of algorithms to produce a large variety of sounds mixing more than one carriers and modulators (in some cases with feedback loops).
+## Implementation
+The implementation is divided in two main frames: **SuperCollider** that manages the *synth*,*MIDI* and *OSC client* parts and the **Control Interface** that manages the *Hand Tracking*, *Animations* and *OSC server* parts.
+### SuperCollider
+#### FM Synth
+(davide)
 
-![Flanger block diagram](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/report%20HW2/db_flanger.png)
+#### MIDI
+The synth *fm* is instantiated as a global variable (~monoNote) with amplitude equal to zero, in order to easily have access to the parameters and immediately change them "on the fly" when the user is playing. The *noteOnFunc* exploits the *set* function and set the frequency, the amplitude (according to the normalized velocity). The *noteOffFunc* uses the same *set* function and set the amplitude equal to zero in order to stop the synth. Therefore, using a MIDI keyboard you can control the carrier's frequency and amplitude as well as the duration of the sound produced.
 
-As we can see from the block diagram, we have two gains, gFB, which is the
-feedback gain, and gFF , the gain related to the output of the delay line. For
-ensure the filter's stability we set the value of the feedback gain less then
-one. If gFB < 1, the delayed copies of the sound will gradually decay, where
-a gain of 1 or more means they will grow indefinitely and the filter become
-unstable. So, the input/output relation for the 
-anger with feedback can be
-expressed in the time domain as:
+#### OSC
+Osc is used to manage the client-server part that is responsible to the exchange of messages from the user interface and the synthetiser. The OSC receiver is active at the address 127.0.0.1 (localhost) at port 57120. The received messages contain 4 parameters that correspond to the horizontal and vertical coordinates of the centroid of the hand, the palm-index distance and the palm slope. This parameters are received in the interval [0,1] and mapped, using the *LinLin* function, in proper intervals selected with the purpose of have a pleasent experience. The x-axis coordinate of the centroid is mapped into the [0.01,0.3] interval and assigned to the feedback; the y-axis coordinate of the centroid is mapped in [0.1,1.5] and manage the modulation amplitude; the palm length is mapped into [20,2000] and set the cut off frequency of the LPF and the palm slope is mapped intp [0,0.6] and set the reverb amount. The parameters after the mapping phase are assigned to the *~monoNote* through the *set* function.
 
-<p align= center> y[n] = x[n]+ gFFd[n]
+### Control Interface
+The user interface is hosted as a web page/application in an Express server, the connection is set up through the framework Socket.io. All the control parameter mentioned above are computed in the client and then sent to the server. From the server, the parameters are written in OSC messages and forwarded to SuperCollider. This last past is handled through the library osc.js, which can generate OSC messages from javascript objects and establish a connection with a receiver (i.e., SuperCollider through an
+UDP connection). The OSC message has only one path \/params" in which are contained all the parameters as oats.
 
-and the output of the Delay line as:
- 
-<p align= center>  d[n] = x[n - M[n]] + gFBd[n - M[n]] 
+#### Hand Interaction
+Modules and libraries used: Node.js, Socket.io, Express, p5.js, ml5.js, osc.js. The synthesizer can be controlled through hand gestures captured from a webcam. For the hand pose recognition, we used a pre-trained ML modelfrom ml5.js (a javascript framework for creative coding built on top of TensorFlow.js), which takes frame by frame the video stream and return the coordinates of 21 points of the hand (this process is GPU intensive, even though the model is lightweight, a system with a dedicated graphic card is advised for best results). The hand is tracked by 21 points and from these points we compute 3 parameters: the centroid, the distance between the tip of the middle finger and the base of the palm and the orientation of the hand. 
 
-M[n] expresses the delay length over a sample n.
+#### Animations
+The user interface, as we just said, is a web application in which we imported the libraries ml5.js and p5.js. We set p5.js in Instance Mode in order to manage 4 different sketches which compose the main window. The bigger p5 sketch at the top left is the one visualizing the webcam, the 21 points of the hand and the control parameters. The other three are a representation of the control parameters using **psychedelic animations**. At the bottom left we have a visualization for the hand orientation, at the top right for the x and y position of the centroid, and finally at the bottom right, for the distance between the middle finger and the palm base. Going into more depth on the animations implementation, we used as a reference the examples on the https://p5js.org website and a number of Youtube tutorials, in order to properly manage all the instructions in the code. 
 
-### Plug-in parameters
-These are the parameters we chose for our Flanger plugin that apper in the GUI and could be modify by the user:
-- **Feedforward** (Mix) (knob): It represents the amount of delayed signal that is mixed in with the
-original one. Having a value of 0 means that we are considering only the
-dry signal. Increasing this value (up to 1), one can adjust the balance
-between the processed signal and the dry signal.
+The **Squared Rose** animation is a easily interpretable as visually impactful effect that describes the variation of the LPF cut off frequency. 
 
-- **Feedback** (knob): Through this parameter it's possible to control, in practice, how much
-of the output signal from the delay line we want to send back through
-the device input. The range of possible values for this plugin is [0; 0:50].
-We decided to set the end of the range at half of his theoretical maximum for personal tastes to reach a specific sound effect, because the
-more it approaches 1 the more emerges a metallic sound due to the
-sharpening of peaks and notches in the frequency response.
-- **Delay** (knob): It lets the user adjusts the minimum amount of delay of the LFO, in a
-range of [1:00; 5:00][ms]. For higher delay times our 
-Flanger behaved as
-a chorus, so we fixed the max at 5 ms.
-- **LFO Width** (Sweep Width)  (knob): It allows the user to control the total amplitude of waveform of the
-LFO, in a range of [1:00; 20:00][ms].
-- **LFO Frequency** (Speed) (knob): The LFO frequency can be set in a range of [0:05; 2:00][Hz].
-- **Shape of the LFO Envelope**  (Combo Box): It allows one to select which shape use for the LFO. For this plugin there
-are three possible waveform shapes: Sine, Triangle and Sawtooth.
-## Juce Implementation: the Audio Processor
-The first thing we decided to implement is the **Value Tree State**, a class used
-to manage all the parameters of the plugin, or so to say, the entire plugin's
-state. It is very helpful in order to handle the connection between the objects
-in the Editor and the Processor via the instantiation of specific classes called
-*Attachments*, one for each type of graphical objects (i.e., slider, comboBox).
-An identification string is used for retrieving a parameter, and by using the
-Value Tree State, the post-condition of the get method ensures that the pa-
-rameter is the newest value up to date with the user interface.
+About the **Sun Sphere** animation instead, the astonishing effect given by the cohesion between the central sphere (created with a for cycle of multiple ellipses) and the colorful rays (created with a for cycle of multiple triangles) is essentially possible thanks to the double rotation implemented, through the functions rotateX and rotateY. The behaviour of the colors is similar to the previous animation, except for the increased velocity in the transitions. This "2 in 1 animation canvas" is used to describe the variations of feedback and modulation amplitude.
 
-As a delay-based effect, the  Flanger is implemented using circular buffers,
-which can be considered as FIFO buffers (First In First Out). The dimen-
-sion of the buffer is fixed and it is large enough to fit the amount of the
-maximum delay (sweep width + delay parameters) at any point in the LFO cycle. 
+Talking about the **Double Square** animation, we decided to implement an immediately readable effect, describing the variation of the reverb volume. The 2 squares gradually decrease & increase their dimension following the hand orientation, as we'll show in the demo.
 
-The actual length of delay at any time is controlled by the distance
-between the read pointer and the write pointer in the buffer. The increase
-or decrease of the delay is represented by the speed of the read pointer with
-respect to the movement of the write pointer. If the read pointer moves faster
-(slower), the amount of delay will decrease (increase).
 
-In addition, we need to use low order polynomial interpolation to calculate
-the output of the delay line, including the case in which the delay length,
-expressed by the function M[n], is not an integer. First, we tried to imple-
-ment a simple linear interpolation, but then we opted instead for the **cubic
-interpolation** because the former was causing some artefacts. 
-In either case, we left the linear interpolation commented in the code for a quick comparison.
+## How to use it
+In order to use the application, run the server using Node.js with the command node .\server.js from terminal. Then
+connect to the url localhost:55123 in a browser (it may take some seconds to load the ML model). Open the synth in SuperCollider and run all the code. Now you can enjoy the experience from your localhost page!
 
-In order to handle the multiple waveforms of the LFO, we deffined the wave
-functions through a switch case in which the phase varies incrementally.
-Given the wave functions, it easy to compute the current delay with the
-user-defined parameters *width* and *delay* and hence the delay read pointer:
-
-`float currentDelay = delay + sweepWidth * waveformFunction;`
-
-### GUI Implementation
-In order to create the knobs, we created two custom classes: *BlueKnob-
-Style, MagentaKnobStyle* in the *PluginEditor.h* that use the juce method
-*LookAndFeel V4*. 
-
-The class draw the knob starting from a rotary slider,
-drawing two concentric circles and rotating a rectangle using the method
-
-`juce::AffineTransform`
-
-Then we defined two elements: *blueKnob, mageKnob* of the classes in the
-*AudioProcessorEditor* that gives the style defined to the slider using the
-function *setLookAndFeel* in the editor compiler.
-
-## Result and demo
-Here is the [VST-3 file](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/Flanger/VST3/Flanger.vst3) that you can download If you want to try our plug-in in any DAW.
-
-To recreate the famous *jet passing overhead* characteristic sound of the
-Flanger, we recorded a clean guitar and applied some distortion (adding higher
-frequencies enhance the effect). And finally, we fed the guitar recording to
-delay with the following parameters:
-- Feedforward = 1
-- Feedback = 0:25
-- Delay = 1 ms
-- LFO Width = 4:5 ms
-- LFO Freq = 0:1 Hz
-- Waveform = sine
-
-The result can be played at the following link: [Audio Demo](https://polimi365-my.sharepoint.com/:u:/g/personal/10751438_polimi_it/ESSG1VdlCZVMsWpJDyI5JisBTeKSS_7I16fRfVOw2sIelg?e=JC0Wi9)
-or can be downloaded [here](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/flangerAudioTest.mp3).
-
-Here below you can see the plug-in User Interface start-up window with all the
-default parameters:
-
-![User Interface](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/report%20HW2/ui.png)
-
-For a further explanation please see the [report](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/report%20HW2/HW2.pdf).
+## Result and Demo
 
 

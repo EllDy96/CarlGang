@@ -3,7 +3,7 @@
 Implementation of a FM synthesizer, designed in **SUPERCOLLIDER**, controlled by tracking hand movements and visualization through geometric forms. 
 
 ### What is a FM Synthesizer?
-
+It is a synthesizer that exploits *Frequency Modulation*
 ## Implementation
 
 ### SuperCollider

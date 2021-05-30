@@ -4,9 +4,9 @@ Implementation of a FM synthesizer, designed in **SUPERCOLLIDER**, controlled by
 
 ### What is a FM synthesizer?
 
-##Implementation
+## Implementation
 
-###SuperCollider
+### SuperCollider
 
 ### Plug-in parameters
 These are the parameters we chose for our Flanger plugin that apper in the GUI and could be modify by the user:

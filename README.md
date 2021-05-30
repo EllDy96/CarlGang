@@ -2,21 +2,9 @@
 ## Introduction
 Implementation of a FM synthesizer, designed in **SUPERCOLLIDER**, controlled by tracking hand movements and visualization through geometric forms. 
 
-### What is a flanger with feedback?
-The Flanger is a Delay based audio effect. It is a linear audio filter based on the Delay effect but with something more. Its typical sound is produced by changing the delay length over time, creating a motion of regularly spaced
-notches in the frequency response of the filter. To create this motion we modulated the delay-time with a low-frequency oscillator (LFO) using three possible waveforms: sine, triangle and sawtooth. 
-One important constraint to achieve a Flanger effect is to set a short delay length (1-10 ms), to avoid the perception of multiple instruments as in the chorus effect.
-### What does the feedback do?
-Adding a feedback control, the output of the delay line is routed
-back to its input. It will result in many successive copies of the input signal
-spaced several milliseconds apart and gradually decaying over time producing
-an harmonic enrichment and a colouration of the sound effect! This feature
-can be controlled by the user with the feedback gain knob. However, since
-the delay times in the Flanger are below the threshold of echo perception
-(roughly 50-70 ms), these copies are not heard as independent sounds as
-with the feedback of a pure delay effect.
+### What is a FM synthesizer?
 
-## Theoretical Implementation
+## SUPERCOLLIDER Implementation
 For the real implementation we started from its block diagram: 
 
 ![Flanger block diagram](https://github.com/EllDy96/CarlGang/blob/Homework2/Hw_2/report%20HW2/db_flanger.png)

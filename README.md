@@ -11,10 +11,10 @@ The implementation is divided in two main frames: **SuperCollider** that manages
 (davide)
 
 #### MIDI
-The synth *fm* is instantiated as a global variable (~monoNote) with amplitude equal to zero. The *noteOnFunc* exploits the *set* function and set the frequency, the amplitude (according to the normalized velocity) and the gate in order to trigger the attack of the envelop. The *noteOffFunc* uses the same *set* function and set the gate equal to zero in order to trigger the release of the synth. Therefore, using a MIDI keyboard you can control the carrier's frequency and amplitude as well as the duration of the sound produced.
+The synth *fm* is instantiated as a global variable (~monoNote) with amplitude equal to zero, in order to easily have access to the parameters and immediately change them "on the fly" when the user is playing. The *noteOnFunc* exploits the *set* function and set the frequency, the amplitude (according to the normalized velocity). The *noteOffFunc* uses the same *set* function and set the amplitude equal to zero in order to stop the synth. Therefore, using a MIDI keyboard you can control the carrier's frequency and amplitude as well as the duration of the sound produced.
 
 #### OSC
-
+Osc is used to manage the client-server part that is responsible to the exchange of messages from the user interface and the synthetiser. The OSC receiver is active at the address 127.0.0.1 (localhost) at port 57120. The received messages contain 4 parameters that correspond to the horizontal and vertical coordinates of the centroid of the hand, the palm-index distance and the palm slope. This parameters are received in the interval [0,1] and mapped, using the *LinLin* function, in proper intervals selected with the purpose of have a pleasent experience. The x-axis coordinate of the centroid is mapped into the [0.01,0.3] interval and assigned to the feedback; the y-axis coordinate of the centroid is mapped in [0.1,1.5] and manage the modulation amplitude; the palm length is mapped into [20,2000] and set the cut off frequency of the LPF and the palm slope is mapped intp [0,0.6] and set the reverb amount. The parameters after the mapping phase are assigned to the *~monoNote* through the *set* function.
 
 ### Control Interface
 #### Hand Interaction

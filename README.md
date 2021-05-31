@@ -58,10 +58,15 @@ though the model is lightweight, a system with a dedicated graphic card is
 advised for best results). 
 
 
-![TrackedHand](https://github.com/EllDy96/CarlGang/blob/Homework3/report/hand.png)
+
 
 
 ### Animations
+
+![image](https://user-images.githubusercontent.com/74536287/120175715-ca074b00-c206-11eb-8c82-67cb75d8e4de.png)
+
+
+
 The user interface, as we just said, is a web application in which we imported the libraries ml5.js and p5.js. We set p5.js in Instance Mode in order to manage 4 different sketches which compose the main window. The bigger p5 sketch at the top left is the one visualizing the webcam, the 21 points of the hand and the control parameters. The other three are a representation of the control parameters using **psychedelic animations**. At the bottom left we have a visualization for the hand orientation, at the top right for the x and y position of the centroid, and finally at the bottom right, for the distance between the middle finger and the palm base. Going into more depth on the animations implementation, we took ispiration from  the [p5.js example](https://p5js.org), in order to properly manage all the instructions in the code. 
 
 The **Squared Rose** animation is a easily interpretable as visually impactful effect that describes the variation of the LPF cut off frequency. 
@@ -69,6 +74,7 @@ The **Squared Rose** animation is a easily interpretable as visually impactful e
 About the **Sun Sphere** animation instead, the astonishing effect given by the cohesion between the central sphere (created with a for cycle of multiple ellipses) and the colorful rays (created with a for cycle of multiple triangles) is essentially possible thanks to the double rotation implemented, through the functions rotateX and rotateY. The behaviour of the colors is similar to the previous animation, except for the increased velocity in the transitions. This "2 in 1 animation canvas" is used to describe the variations of feedback and modulation amplitude.
 
 Talking about the **Double Square** animation, we decided to implement an immediately readable effect, describing the variation of the reverb volume. The 2 squares gradually decrease & increase their dimension following the hand orientation, as we'll show in the demo.
+
 
 
 ## How to use it

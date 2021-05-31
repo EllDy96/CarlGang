@@ -63,7 +63,8 @@ advised for best results).
 
 ### Animations
 
-![image](https://user-images.githubusercontent.com/74536287/120175715-ca074b00-c206-11eb-8c82-67cb75d8e4de.png)
+![image](https://user-images.githubusercontent.com/74536287/120176163-3f731b80-c207-11eb-90f6-701fd36b90e3.png)
+
 
 
 

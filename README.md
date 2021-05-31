@@ -69,7 +69,7 @@ About the **Sun Sphere** animation instead, the astonishing effect given by the 
 Talking about the **Double Square** animation, we decided to implement an immediately readable effect, describing the variation of the reverb volume. The 2 squares gradually decrease & increase their dimension following the hand orientation, as we'll show in the demo.
 
 ### Comunication Protocols
-![image](https://user-images.githubusercontent.com/74536287/120170174-ffa93580-c200-11eb-93e3-57494feee207.png)
+![image](https://user-images.githubusercontent.com/74536287/120180933-ac3ce480-c20c-11eb-92f9-27041837f925.png)
 
 #### MIDI
 The user needs to connect a midi controller in order to play the Synthesizer, the midi messages will be manage inside Supercollider. Our synth *FmSynth* is instantiated as a global variable (~monoNote) with amplitude equal to zero, in order to easily have access to the parameters and immediately change them "on the fly" when the user is playing. The *noteOnFunc* exploits the *set* function and set the frequency, the amplitude (according to the normalized velocity). The *noteOffFunc* uses the same *set* function and set the amplitude equal to zero in order to stop the synth. Therefore, using a MIDI keyboard you can control the carrier's frequency and amplitude as well as the duration of the sound produced.

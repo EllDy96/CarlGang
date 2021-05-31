@@ -98,5 +98,5 @@ connect to the url localhost:55123 in a browser (it may take some seconds to loa
 Now you can enjoy the experience from your localhost page! If you star to move your hand in front of the camera while playing some notes with the Midi controller you will be able to change the sound in real time! Enjoy.
 
 ## Result and Demo
-
+ You can watch our [YouTube video demo](https://www.youtube.com/watch?v=K2psTeCzOCo&ab_channel=DavideLionetti) where we show a live interaction using the Handy Synth! Comment and share if you like it!
 

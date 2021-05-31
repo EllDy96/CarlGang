@@ -1,14 +1,41 @@
 # FM Synthesizer controlled by hand movement
 ## Introduction
+![image](https://user-images.githubusercontent.com/74536287/120165857-47798e00-c1fc-11eb-9c1e-a5d6058d5b5f.png)
+
 Implementation of a FM synthesizer, designed in **SUPERCOLLIDER**, controlled by tracking hand movements and visualization through geometric and colorfull animations, using **P5**. 
 
 ### What is a FM Synthesizer?
 It is a synthesizer that exploits **Frequency Modulation**, where the carrier oscillator is modulated in frequency with modulators. **FM Synthesis** can create both harmonic and inharmonic sounds, depending on the ratio between the carrier frequency and the modulator frequency. If the modulators frequencies are multiple integers of the carrier frequency the sound will be harmonic, instead if the ratio is a non-integer fraction the sound will be inharmonic. In a FM synthetiser can be used a lot of algorithms to produce a large variety of sounds mixing more than one carriers and modulators (in some cases with feedback loops).
 ## Implementation
 The implementation is divided in two main frames: **SuperCollider** that manages the *synth*,*MIDI* and *OSC client* parts and the **Control Interface** that manages the *Hand Tracking*, *Animations* and *OSC server* parts.
-### SuperCollider
-#### FM Synth
-(davide)
+#### FM Synth in Supercollider
+![image](https://user-images.githubusercontent.com/74536287/120165513-f36ea980-c1fb-11eb-8aa3-eb124e33b0dd.png)
+
+We design all the sound generation and manipulation via **Supercollider**.
+To create a Frequency modulation Synthesizer we built a simple pattern
+based on one Sinusoidal oscillator with feedback as a modulator an another
+sinusoidal oscillator as a carrier. In order to rightly tune this pattern we
+follow three main guideline rules:
+- The amplitude of the modulation oscillator controls the number of the
+carrier's side-band frequency peaks that will appear in the frequency
+response.
+- The frequency interval at which the side-band peaks will appear is
+equals to the modulator frequency.
+- The output signal will tend to produce a clear sense of pitch when the
+carrier and the modulator frequencies form a simple ratio (e.g. 2:1).
+To obtain a pleasant sound , starting from a midi input, we model
+the modulation and the carrier frequency using two tunable parameters called
+*carrierRatio and modulationRatio* that allows us to guarantee a integer
+ratio between these two. We scale the amount of the sub-bands components
+using another parameter called *index* that then will be controlled by the
+user. To clean the final sound and make it less muddy we apply an high-cut
+filter to the upper spectrum range and a low pass filter to the lowest part.
+Finally we add a Reverb and a tunable parameter that allow the user to
+control the Reverb amount in real time.
+
+To make the live interaction more interesting we also implement a way to 
+control in real time  the *modulation feedback* and the *cut-off
+frequency* of a Low pass filter connected to the Output signal.
 
 #### MIDI
 The synth *fm* is instantiated as a global variable (~monoNote) with amplitude equal to zero, in order to easily have access to the parameters and immediately change them "on the fly" when the user is playing. The *noteOnFunc* exploits the *set* function and set the frequency, the amplitude (according to the normalized velocity). The *noteOffFunc* uses the same *set* function and set the amplitude equal to zero in order to stop the synth. Therefore, using a MIDI keyboard you can control the carrier's frequency and amplitude as well as the duration of the sound produced.
@@ -21,15 +48,12 @@ The user interface is hosted as a web page/application in an Express server, the
 UDP connection). The OSC message has only one path \/params" in which are contained all the parameters as oats.
 
 #### Hand Interaction
-Modules and libraries used: Node.js, Socket.io, Express, p5.js, ml5.js, osc.js. The synthesizer can be controlled through hand gestures captured from a webcam. For the hand pose recognition, we used a pre-trained ML modelfrom ml5.js (a javascript framework for creative coding built on top of TensorFlow.js), which takes frame by frame the video stream and return the coordinates of 21 points of the hand (this process is GPU intensive, even though the model is lightweight, a system with a dedicated graphic card is advised for best results). The hand is tracked by 21 points and from these points we compute 3 parameters: the centroid, the distance between the tip of the middle finger and the base of the palm and the orientation of the hand. 
+Modules and libraries used: *Node.js, Socket.io, Express, p5.js, ml5.js, osc.js*. The synthesizer can be controlled through hand gestures captured from a webcam. For the hand pose recognition, we used a pre-trained ML modelfrom ml5.js (a javascript framework for creative coding built on top of TensorFlow.js), which takes frame by frame the video stream and return the coordinates of 21 points of the hand (this process is GPU intensive, even though the model is lightweight, a system with a dedicated graphic card is advised for best results). The hand is tracked by 21 points and from these points we compute 3 parameters: the centroid, the distance between the tip of the middle finger and the base of the palm and the orientation of the hand. 
 
 #### Animations
-The user interface, as we just said, is a web application in which we imported the libraries ml5.js and p5.js. We set p5.js in Instance Mode in order to manage 4 different sketches which compose the main window. The bigger p5 sketch at the top left is the one visualizing the webcam, the 21 points of the hand and the control parameters. The other three are a representation of the control parameters using **psychedelic animations**. At the bottom left we have a visualization for the hand orientation, at the top right for the x and y position of the centroid, and finally at the bottom right, for the distance between the middle finger and the palm base. Going into more depth on the animations implementation, we used as a reference the examples on the https://p5js.org website and a number of Youtube tutorials, in order to properly manage all the instructions in the code. 
+The user interface, as we just said, is a web application in which we imported the libraries ml5.js and p5.js. We set p5.js in Instance Mode in order to manage 4 different sketches which compose the main window. The bigger p5 sketch at the top left is the one visualizing the webcam, the 21 points of the hand and the control parameters. The other three are a representation of the control parameters using **psychedelic animations**. At the bottom left we have a visualization for the hand orientation, at the top right for the x and y position of the centroid, and finally at the bottom right, for the distance between the middle finger and the palm base. Going into more depth on the animations implementation, we took ispiration from  the [p5.js example](https://p5js.org), in order to properly manage all the instructions in the code. 
 
-The **Squared Rose** animation is a easily interpretable as visually impactful effect that describes the variation of the LPF cut off frequency. The main characteristics of the code itself can be riassumed in the following choices:
-
-* mapping the behaviour of the changing colors with sin() and cos() functions, creating pleasant and smoothing transitions
-* introduce a constant rotation of the figure using the rotate function, and considering as argument frameCount, which contains the number of frames that have been displayed since the program started. You can reduce the rotation speed dividing frameCount by a proper value.
+The **Squared Rose** animation is a easily interpretable as visually impactful effect that describes the variation of the LPF cut off frequency. 
 
 About the **Sun Sphere** animation instead, the astonishing effect given by the cohesion between the central sphere (created with a for cycle of multiple ellipses) and the colorful rays (created with a for cycle of multiple triangles) is essentially possible thanks to the double rotation implemented, through the functions rotateX and rotateY. The behaviour of the colors is similar to the previous animation, except for the increased velocity in the transitions. This "2 in 1 animation canvas" is used to describe the variations of feedback and modulation amplitude.
 
@@ -37,7 +61,7 @@ Talking about the **Double Square** animation, we decided to implement an immedi
 
 
 ## How to use it
-In order to use the application, clone the repository  and  inside the Interaction folder run the server using Node.js with the command node .\server.js from terminal. Then
+In order to use the application, clone the repository and  inside the Interaction folder run the server using Node.js with the command `node .\server.js `from terminal. Then
 connect to the url localhost:55123 in a browser (it may take some seconds to load the ML model). Open the synth in SuperCollider conect a MIDI controller and run the code. Now you can enjoy the experience from your localhost page! If you star to move your hand in front of the camera while playing some notes with the Midi controller you will be able to change the sound in real time! Enjoy.
 
 ## Result and Demo

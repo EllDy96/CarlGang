@@ -135,7 +135,7 @@ OSCdef('OSCreceiver',
 //Compile one of this to try the synth with different presets
 
 // modulation ratio 2:1
-~monoNote.set(\feedback,0.3,\curveRel,-3,\rel,2,\modulationRatio,2,\index,0.5,\cut_off, 3000,\revVolume, 0.);
+~monoNote.set(\feedback,0.3,\curveRel,-3,\rel,2,\modulationRatio,2,\index,0.5,\cut_off, 3000,\revVolume, 0.7);
 
 // high index and low modulationRatio, high feedback
 ~monoNote.set(\feedback,0.8, \curveRel,-2,\rel,3,\index,2,\modulationRatio,0.5,\revVolume, 0.5,);

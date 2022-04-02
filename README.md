@@ -80,7 +80,7 @@ Osc is used to manage the client-server part that is responsible to the exchange
 
 
 ## How to use it
-In order to use the application you need a webcam and midi controller. Clone the repository and  inside the Interaction folder run the server using Node.js with the command `node .\server.js `from terminal. Then
+In order to use the application you need a webcam and midi controller. Clone the repository and  inside the Interaction folder run the server using Node.js with the command `node .\server.js `from the PoweShell terminal. Then
 connect to the url localhost:55123 in a browser (it may take some seconds to load the ML model). Open the synth in SuperCollider conect a MIDI controller and run the code. You can decide between three starting Synth preset at the end of the SuperCollider code.
 
 ```

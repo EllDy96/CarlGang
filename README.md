@@ -46,9 +46,7 @@ UDP connection). The OSC message has only one path \/params in which are contain
 
 
 ### Hand Interaction
-Modules and libraries used: *Node.js, Socket.io, Express, p5.js, ml5.js, osc.js*. The synthesizer can be controlled through hand gestures captured from a webcam. For the hand pose recognition, we used a pre-trained ML modelfrom ml5.js (a javascript framework for creative coding built on top of TensorFlow.js), which takes frame by frame the video stream and return the coordinates of 21 points of the hand (this process is GPU intensive, even though the model is lightweight, a system with a dedicated graphic card is advised for best results). The hand is tracked by 21 points and from these points we compute 3 parameters: the centroid, the distance between the tip of the middle finger and the base of the palm and the orientation of the hand (this process is GPU intensive, even
-though the model is lightweight, a system with a dedicated graphic card is
-advised for best results).
+Modules and libraries used: *Node.js, Socket.io, Express, p5.js, ml5.js, osc.js*. The synthesizer can be controlled through hand gestures captured from a webcam. For the hand pose recognition, we used a pre-trained ML modelfrom ml5.js (a javascript framework for creative coding built on top of TensorFlow.js), which takes frame by frame the video stream and return the coordinates of 21 points of the hand (this process is GPU intensive, even though the model is lightweight, a system with a dedicated graphic card is advised for best results). The hand is tracked by 21 points and from these points we compute 3 parameters: the centroid, the distance between the tip of the middle finger and the base of the palm and the orientation of the hand.
 
 ![handImmage](https://github.com/EllDy96/CarlGang/blob/Homework3/report/hand.png)
 
